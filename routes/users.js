@@ -15,7 +15,12 @@ function authorizedUser(req, res, next) {
 }
 
 router.get("/", authorizedUser, function(req, res, next) {
-    res.render("user/dashboard");
+  let userID = req.session.user.id;
+  knex("users").where("id", userID).first().then(function (user){
+    res.render("user/dashboard", {
+        user: user
+  });
+});
 });
 
 module.exports = router;

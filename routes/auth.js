@@ -30,9 +30,11 @@ router.post("/register", function (req, res, next) {
                         hashed_password: hash,
                         avatar: created_avatar,
                         username: req.body.username,
+                        first_name: req.body.first_name,
+                        last_name: req.body.last_name,
                     }).then(function (){
                         res.cookie("registered", true);
-                        res.redirect("/auth/login");
+                        res.redirect("/login");
                     });
                 });
         } else {
@@ -43,7 +45,7 @@ router.post("/register", function (req, res, next) {
 
 router.post("/login", function (req, res, next) {
     knex("users").where({
-        email: req.body.email
+        username: req.body.username
     }).first().then(function (user) {
         if(!user){
             res.send("No user exists");
@@ -53,8 +55,7 @@ router.post("/login", function (req, res, next) {
                     req.session.user = user;
                     res.clearCookie("registered");
                     res.cookie("loggedin", true);
-                    res.render("user/dashboard", {
-                    });
+                    res.redirect("/user");
                 } else {
                     res.send("Something went wrong");
                 }
