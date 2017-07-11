@@ -1,0 +1,45 @@
+{
+  "name": "the_refactory",
+  "version": "1.0.0",
+  "description": "making system integration data simpler",
+  "main": "server.js",
+  "repository": "https://github.com/cpbuckingham/the_refactory",
+  "directories": {
+  "test": "test"
+},
+"scripts": {
+    "test": "NODE_ENV=test mocha --reporter dot",
+    "start": "node server.js",
+    "heroku-postbuild": "knex migrate:latest",
+    "nibble": "eslint-nibble db/ migrations/ public/ routes/ seeds/ test/views server.js"
+  },
+  "engines": {
+  "node": "6.4.0"
+},
+"author": "cpbuckingham",
+"license": "ISC",
+"dependencies": {
+  "bcrypt": "^0.8.7",
+  "body-parser": "^1.15.2",
+  "cheerio": "^0.22.0",
+  "cookie-parser": "^1.4.3",
+  "cookie-session": "^2.0.0-alpha.1",
+  "dotenv": "^4.0.0",
+  "ejs": "^2.5.2",
+  "eslint-nibble": "^3.1.2",
+  "express": "^4.14.0",
+  "express-flash": "0.0.2",
+  "knex": "^0.12.2",
+  "method-override": "^2.3.6",
+  "nodemailer": "^4.0.0",
+  "pg": "^6.1.0",
+  "request": "^2.79.0"
+},
+"devDependencies": {
+  "chai": "^3.5.0",
+  "eslint": "^3.19.0",
+  "mocha": "^3.1.0",
+  "morgan": "^1.7.0",
+  "supertest": "^2.0.0"
+  }
+}
