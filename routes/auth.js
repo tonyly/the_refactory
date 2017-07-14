@@ -34,7 +34,7 @@ router.post("/register", function (req, res, next) {
                         last_name: req.body.last_name,
                     }).then(function (){
                         res.cookie("registered", true);
-                        res.redirect("/login");
+                        res.redirect("/auth/login");
                     });
                 });
         } else {
@@ -55,7 +55,7 @@ router.post("/login", function (req, res, next) {
                     req.session.user = user;
                     res.clearCookie("registered");
                     res.cookie("loggedin", true);
-                    res.redirect("/user");
+                    res.redirect("/users");
                 } else {
                     res.send("Something went wrong");
                 }
