@@ -53,7 +53,7 @@
     <nav role="navigation">
         <div class="header-link hide-menu"><i class="fa fa-bars"></i></div>
         <div class="small-logo">
-            <span class="text-primary">HOMER APP</span>
+            <span class="text-primary"> The_ReFactory</span>
         </div>
         <form role="search" class="navbar-form-custom" method="post" action="#">
             <div class="form-group">
@@ -67,13 +67,13 @@
             <div class="collapse mobile-navbar" id="mobile-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a class="" href="login.html">Login</a>
+                        <a class="" href="/auth/login">Login</a>
                     </li>
                     <li>
                         <a class="" href="/auth/logout">Logout</a>
                     </li>
                     <li>
-                        <a class="" href="profile.html">Profile</a>
+                        <a class="" href="/users/<%=user.id%>/edit">Profile</a>
                     </li>
                 </ul>
             </div>
@@ -86,19 +86,7 @@
                     </a>
                     <ul class="dropdown-menu hdropdown notification animated flipInX">
                         <li>
-                            <a>
-                                <span class="label label-success">NEW</span> It is a long established.
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                <span class="label label-warning">WAR</span> There are many variations.
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                <span class="label label-danger">ERR</span> Contrary to popular belief.
-                            </a>
+                            You have 0 new notifications
                         </li>
                         <li class="summary"><a href="#">See all notifications</a></li>
                     </ul>
@@ -113,39 +101,39 @@
                             <tbody>
                             <tr>
                                 <td>
-                                    <a href="projects.html">
+                                    <a href="/users/<%=user.id%>">
                                         <i class="pe pe-7s-portfolio text-info"></i>
-                                        <h5>Projects</h5>
+                                        <h5>Dashboard</h5>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="mailbox.html">
+                                    <a href="/messages/<%=user.id%>">
                                         <i class="pe pe-7s-mail text-warning"></i>
-                                        <h5>Email</h5>
+                                        <h5>Messages</h5>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="contacts.html">
+                                    <a href="/projects/<%=user.id%>">
                                         <i class="pe pe-7s-users text-success"></i>
-                                        <h5>Contacts</h5>
+                                        <h5>Projects</h5>
                                     </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="forum.html">
+                                    <a href="/notifications/<%=user.id%>">
                                         <i class="pe pe-7s-comment text-info"></i>
-                                        <h5>Forum</h5>
+                                        <h5>Notifications</h5>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="analytics.html">
+                                    <a href="/analytics/<%=user.id%>">
                                         <i class="pe pe-7s-graph1 text-danger"></i>
                                         <h5>Analytics</h5>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="file_manager.html">
+                                    <a href="/files/<%=user.id%>">
                                         <i class="pe pe-7s-box1 text-success"></i>
                                         <h5>Files</h5>
                                     </a>
@@ -158,32 +146,16 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle label-menu-corner" href="#" data-toggle="dropdown">
                         <i class="pe-7s-mail"></i>
-                        <span class="label label-success">4</span>
+                        <span class="label label-success"></span>
                     </a>
                     <ul class="dropdown-menu hdropdown animated flipInX">
                         <div class="title">
-                            You have 4 new messages
+                            You have 0 new messages
                         </div>
-                        <li>
+                        <!-- <li>
                             <a>
-                                It is a long established.
                             </a>
-                        </li>
-                        <li>
-                            <a>
-                                There are many variations.
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                Lorem Ipsum is simply dummy.
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                Contrary to popular belief.
-                            </a>
-                        </li>
+                        </li> -->
                         <li class="summary"><a href="#">See All Messages</a></li>
                     </ul>
                 </li>
@@ -219,7 +191,7 @@
                     </a>
                     <ul class="dropdown-menu animated flipInX m-t-xs">
                         <li><a href="/users/<%=user.id%>/edit">Profile</a></li>
-                        <li><a href="/analytics">Analytics</a></li>
+                        <li><a href="/projects">Mange Project</a></li>
                         <li class="divider"></li>
                         <li><a href="/auth/logout">Logout</a></li>
                     </ul>
@@ -229,21 +201,33 @@
                 <div id="sparkline1" class="small-chart m-t-sm"></div>
                 <div>
                     <h4 class="font-extra-bold m-b-xs">
-                        $260 104,200
+                        1749 / 2000
                     </h4>
-                    <small class="text-muted">Your income from the last year in sales product X.</small>
+                    <small class="text-muted">Total code quality diagnostics over time</small>
                 </div>
             </div>
         </div>
 
         <ul class="nav" id="side-menu">
+            <li>
+                <a href="/users/<%=user.id%>"> <span class="nav-label">Dashboard</span> </a>
+            </li>
             <li class="active">
-                <a href="index.html"> <span class="nav-label">Dashboard</span> <span class="label label-success pull-right">v.1</span> </a>
+                <a href="/analytics/<%=user.id%>"> <span class="nav-label">Analytics</span> </a>
             </li>
             <li>
-                <a href="analytics.html"> <span class="nav-label">Analytics</span><span class="label label-warning pull-right">NEW</span> </a>
+                <a href="/projects/<%=user.id%>"> <span class="nav-label">Projects</span> </a>
             </li>
             <li>
+                <a href="/messages/<%=user.id%>"> <span class="nav-label">Messages</span> </a>
+            </li>
+            <li>
+                <a href="/notifications/<%=user.id%>"> <span class="nav-label">Notifications</span> </a>
+            </li>
+            <li>
+                <a href="/files/<%=user.id%>"> <span class="nav-label">Files</span> </a>
+            </li>
+            <!-- <li>
                 <a href="#"><span class="nav-label">Interface</span><span class="fa arrow"></span> </a>
                 <ul class="nav nav-second-level">
                     <li><a href="panels.html">Panels design</a></li>
@@ -353,7 +337,7 @@
             </li>
             <li>
                 <a href="package.html"> <span class="nav-label">Package</span></a>
-            </li>
+            </li> -->
 
         </ul>
     </div>
@@ -362,7 +346,7 @@
 <!-- Main Wrapper -->
 <div id="wrapper">
 
-    <div class="content">
+  <div class="content animate-panel">
         <div class="row">
             <div class="col-lg-12 text-center welcome-message">
                 <h2>

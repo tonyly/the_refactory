@@ -13,8 +13,13 @@ const methodOverride = require("method-override");
 const flash = require("express-flash");
 const cookieParser = require("cookie-parser");
 
-const users = require("./routes/users");
 const auth = require("./routes/auth");
+const users = require("./routes/users");
+const analytics = require("./routes/analytics");
+const projects = require("./routes/projects");
+const messages = require("./routes/messages");
+const notifications = require("./routes/notifications");
+const files = require("./routes/files");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -33,6 +38,11 @@ app.use(function(req, res, next){
 
 app.use("/users", users);
 app.use("/auth", auth);
+app.use("/analytics", analytics);
+app.use("/projects", projects);
+app.use("/messages", messages);
+app.use("/notifications", notifications);
+app.use("/files", files);
 
 app.listen(port, function () {
     console.log("hello from", port);
