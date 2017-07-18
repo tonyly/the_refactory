@@ -55,7 +55,7 @@ router.post("/login", function (req, res, next) {
                     req.session.user = user;
                     res.clearCookie("registered");
                     res.cookie("loggedin", true);
-                    res.redirect("/users");
+                    res.redirect("/users/"+ user.id);
                 } else {
                     res.send("Something went wrong");
                 }

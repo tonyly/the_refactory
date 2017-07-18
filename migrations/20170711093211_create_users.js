@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
         table.increments();
         table.boolean("admin").defaultTo(false);
         table.boolean("client").defaultTo(false);
-        table.boolean("super-admin").defaultTo(false);
+        table.boolean("super_admin").defaultTo(false);
         table.string("username").unique();
         table.string("email").unique();
         table.string("hashed_password");
