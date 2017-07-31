@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
         table.string("name").defaultTo("");
         table.string("description").defaultTo("");
         table.string("status").defaultTo("");
+        //new, in progress, closed
         table.string("avatar").defaultTo("");
         table.timestamps(true, true);
     });
