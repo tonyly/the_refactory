@@ -15,7 +15,7 @@ const cookieParser = require("cookie-parser");
 
 const auth = require("./routes/auth");
 const users = require("./routes/users");
-const analytics = require("./routes/clients");
+const clients = require("./routes/clients");
 const projects = require("./routes/projects");
 
 app.set("view engine", "ejs");
