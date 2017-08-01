@@ -25,6 +25,16 @@ router.get("/", authorizedUser, function(req, res, next) {
 });
 });
 
+router.get("/new", authorizedUser, function(req, res, next) {
+  let userID = req.session.user.id;
+  knex("users").where("id", userID).first().then(function (user){
+    res.render("projects/new", {
+        user: user
+  });
+  console.log(user);
+});
+});
+
 router.get("/:id", authorizedUser, function(req, res, next) {
   let userID = req.session.user.id;
   knex("users").where("id", userID).first().then(function (user){
@@ -34,4 +44,48 @@ router.get("/:id", authorizedUser, function(req, res, next) {
   console.log(user);
 });
 });
+
+router.get("/:id/edit", authorizedUser, function(req, res, next) {
+  let userID = req.session.user.id;
+  knex("users").where("id", userID).first().then(function (user){
+    res.render("projects/edit", {
+        user: user
+  });
+  console.log(user);
+});
+});
+
+router.post("/new", function (req, res, next) {
+    knex("projects").where({
+        name: req.body.name
+    }).first().then(function(project){
+        if(!project){
+                createAvatar.generateAvatar(function(created_avatar){
+                    return knex("projects").insert({
+                      name: req.body.name,
+                      description: req.body.description,
+                      status: req.body.status,
+                      avatar: req.body.avatar,
+                    }).then(function (){
+                        res.redirect("/projects");
+                    });
+                });
+        } else {
+            res.send("Something went wrong");
+        }
+    });
+});
+
+router.put("/:id", authorizedUser, function (req, res, next) {
+    let projectID = req.params.id;
+    knex("projects").where("id", projectID).update({
+      name: req.body.name,
+      description: req.body.description,
+      status: req.body.status,
+      avatar: req.body.avatar,
+    }).then(function (){
+        res.redirect("/projects");
+    });
+});
+
 module.exports = router;

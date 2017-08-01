@@ -1,0 +1,52 @@
+<% include forms/header %>
+
+<div class="back-link">
+    <a href="/users/<%=user.id%>" class="btn btn-primary">Back</a>
+</div>
+<div class="register-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center m-b-md">
+                <h3>Edit Client</h3>
+            </div>
+            <div class="hpanel">
+                <div class="panel-body">
+                        <form action="/clients/<%=client.id%>?_method=PUT" id="loginForm" method="POST">
+                            <div class="row">
+                            <div class="form-group col-lg-6">
+                                <label>Email</label>
+                                <input type="" value="<%=client.email%>" id="" class="form-control" name="email" required>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label>First Name</label>
+                                <input type="" value="<%=client.first_name%>" id="" class="form-control" name="first_name" required>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label>Last Name</label>
+                                <input type="" value="<%=client.last_name%>" id="" class="form-control" name="last_name" required>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label>Avatar</label>
+                                <input type="" value="<%=client.avatar%>" id="" class="form-control" name="avatar" required>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label>Project</label>
+                                <input type="" value="<%=client.project%>" id="" class="form-control" name="project" required>
+                            </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-success">Edit Client</button>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <strong>The_ReFactory</strong> <br/> Migration Analytics - Simplified <br/> 2017
+        </div>
+    </div>
+</div>
+
+<% include forms/footer %>
