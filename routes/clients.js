@@ -48,9 +48,11 @@ router.get("/:id", authorizedUser, function(req, res, next) {
 
 router.get("/:id/edit", authorizedUser, function(req, res, next) {
   let clientID = req.params.id;
+  let user = req.session.user.id;
   knex("clients").where("id", clientID).first().then(function (client){
     res.render("clients/edit", {
-        client: client
+        client: client,
+        user: user,
   });
   console.log(client);
 });
