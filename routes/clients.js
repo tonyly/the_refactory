@@ -5,6 +5,7 @@
 const express = require("express");
 const router = express.Router();
 const knex = require("../db/knex");
+const createAvatar = require("../public/javascripts/octodex_avatar");
 
 function authorizedUser(req, res, next) {
     let userID = req.session.user.id;
