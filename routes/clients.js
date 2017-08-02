@@ -59,7 +59,7 @@ router.get("/:id/edit", authorizedUser, function(req, res, next) {
 });
 
 router.post("/new", function (req, res, next) {
-  let userID = req.session.user.username;
+  let userID = req.session.user.id;
     knex("clients").where({
         email: req.body.email
     }).first().then(function(client){
