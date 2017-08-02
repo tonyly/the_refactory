@@ -8,10 +8,8 @@ exports.up = function(knex, Promise) {
         table.string("email").unique();
         table.string("hashed_password").defaultTo("password1");
         table.string("avatar");
-        table.integer("poc");
-        // poc is whoever added them (user drop down)
-        table.integer("project");
-        //project is always assigned at the creation of a client
+        table.integer("user_id").unsigned().index().references("id").inTable("users").onDelete("CASCADE");
+        table.integer("project_id").unsigned().index().references("id").inTable("projects").onDelete("CASCADE");
         table.timestamps(true, true);
     });
 };

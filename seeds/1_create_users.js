@@ -7,7 +7,7 @@ exports.seed = function ( knex, Promise ) {
                     username: "cpbuckingham",
                     email: "cameron.p.buckingham@gmail.com",
                     admin: true,
-                    hashed_password: "$2a$12$pA5OaFrIkIr/tQiFDgFKy./6NOqXXUAjhkF0DvB7HnaQszjYWlx86"
+                    hashed_password: "$2a$12$pA5OaFrIkIr/tQiFDgFKy./6NOqXXUAjhkF0DvB7HnaQszjYWlx86",
                     // password is seed
                     first_name: "Cam",
                     last_name: "Buckingham",
@@ -18,7 +18,7 @@ exports.seed = function ( knex, Promise ) {
                     username: "lindsey",
                     email: "lindsey.buckingham@gmail.com",
                     admin: false,
-                    hashed_password: "$2a$12$pA5OaFrIkIr/tQiFDgFKy./6NOqXXUAjhkF0DvB7HnaQszjYWlx86"
+                    hashed_password: "$2a$12$pA5OaFrIkIr/tQiFDgFKy./6NOqXXUAjhkF0DvB7HnaQszjYWlx86",
                     // password is seed
                     first_name: "Lindsey",
                     last_name: "Buckingham",
@@ -29,7 +29,7 @@ exports.seed = function ( knex, Promise ) {
                     username: "togo",
                     email: "togo.buckingham@gmail.com",
                     admin: false,
-                    hashed_password: "$2a$12$pA5OaFrIkIr/tQiFDgFKy./6NOqXXUAjhkF0DvB7HnaQszjYWlx86"
+                    hashed_password: "$2a$12$pA5OaFrIkIr/tQiFDgFKy./6NOqXXUAjhkF0DvB7HnaQszjYWlx86",
                     // password is seed
                     first_name: "Togo",
                     last_name: "Buckingham",

@@ -70,8 +70,8 @@ router.post("/new", function (req, res, next) {
                       last_name: req.body.last_name,
                       email: req.body.email,
                       avatar: created_avatar,
-                      poc: userID,
-                      project: req.body.project,
+                      user_id: userID,
+                      project_id: req.body.project,
                     }).then(function (){
                         res.redirect("/clients");
                     });
@@ -89,7 +89,7 @@ router.put("/:id", authorizedUser, function (req, res, next) {
       last_name: req.body.last_name,
       email: req.body.email,
       avatar: req.body.avatar,
-      project: req.body.project,
+      project_id: req.body.project,
     }).then(function (){
         res.redirect("/clients");
     });

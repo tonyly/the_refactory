@@ -58,6 +58,7 @@ router.get("/:id/edit", authorizedUser, function(req, res, next) {
 });
 
 router.post("/new", function (req, res, next) {
+  let userID = req.session.user.id;
     knex("projects").where({
         name: req.body.name
     }).first().then(function(project){
@@ -67,6 +68,7 @@ router.post("/new", function (req, res, next) {
                       description: req.body.description,
                       status: req.body.status,
                       avatar: req.body.avatar,
+                      user_id: userID,
                     }).then(function (){
                         res.redirect("/projects");
                   })
