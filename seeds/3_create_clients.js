@@ -34,7 +34,7 @@ exports.seed = function ( knex, Promise ) {
                     first_name: "Bruce",
                     last_name: "Learner",
                     email: "client4@gmail.com",
-                    user_id: 2,
+                    user_id: 3,
                     project_id: 1,
                     avatar: "https://octodex.github.com/images/luchadortocat.png"
                 } ),
@@ -61,7 +61,7 @@ exports.seed = function ( knex, Promise ) {
                     first_name: "Layne",
                     last_name: "McNish",
                     email: "client7@gmail.com",
-                    user_id: 2,
+                    user_id: 1,
                     project_id: 3,
                     avatar: "https://octodex.github.com/images/gracehoppertocat.jpg"
                 } ),
@@ -70,7 +70,7 @@ exports.seed = function ( knex, Promise ) {
                     first_name: "Claire",
                     last_name: "Jones",
                     email: "client8@gmail.com",
-                    user_id: 2,
+                    user_id: 1,
                     project_id: 3,
                     avatar: "https://octodex.github.com/images/hanukkat.png"
                 } ),
@@ -88,7 +88,7 @@ exports.seed = function ( knex, Promise ) {
                     first_name: "Angela",
                     last_name: "Hart",
                     email: "client10@gmail.com",
-                    user_id: 2,
+                    user_id: 3,
                     project_id: 3,
                     avatar: "https://octodex.github.com/images/maxtocat.gif"
                 } ),
@@ -106,7 +106,7 @@ exports.seed = function ( knex, Promise ) {
                     first_name: "Frank",
                     last_name: "Fork",
                     email: "client12@gmail.com",
-                    user_id: 2,
+                    user_id: 1,
                     project_id: 4,
                     avatar: "https://octodex.github.com/images/adventure-cat.png"
                 } )
