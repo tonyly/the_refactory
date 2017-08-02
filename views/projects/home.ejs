@@ -29,7 +29,7 @@
                         <span class="label label-success pull-right"><%=project.status%></span>
                         <div class="row">
                             <div class="col-sm-8">
-                                <h4><a href=""> <%=project.name%></a></h4>
+                                <h4><a href="/projects/<%=project.id%>"> <%=project.name%></a></h4>
 
                                 <p>
                                   <%=project.description%>
@@ -60,8 +60,8 @@
                             <div class="col-sm-4 project-info">
                                 <div class="project-action m-t-md">
                                     <div class="btn-group">
-                                        <button class="btn btn-xs btn-default"> View</button>
-                                        <button class="btn btn-xs btn-default"> Edit</button>
+                                        <button class="btn btn-xs btn-default" href="/projects/<%=project.id%>"> View</button>
+                                        <button class="btn btn-xs btn-default" href="/projects/<%=project.id%>/edit"> Edit</button>
                                     </div>
                                 </div>
                                 <div class="project-value">

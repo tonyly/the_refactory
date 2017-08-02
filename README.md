@@ -5,7 +5,7 @@ todo
 8/1-8/4
 
 for the user
-  variables on home & edit (projects & clients)
+  variables on edit (projects & clients)
 
   single page (clients & projects)
   variables on single (projects & clients)

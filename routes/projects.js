@@ -44,11 +44,14 @@ router.get("/:id", authorizedUser, function(req, res, next) {
   let projectID = req.params.id;
   knex("users").where("id", userID).first().then(function (user){
     knex("projects").where("id", projectID).first().then(function (project){
+      knex("clients").where("project_id", projectID).then(function (clients){
     res.render("projects/single", {
         user: user,
         project: project,
+        clients: clients,
   });
   console.log(project);
+});
 });
 });
 });
