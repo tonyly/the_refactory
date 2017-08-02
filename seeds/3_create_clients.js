@@ -107,7 +107,7 @@ exports.seed = function ( knex, Promise ) {
                     email: "client12@gmail.com",
                     user_id: 2,
                     project_id: 4,
-                    avatar: "https://octodex.github.com/images/adventure-cat.png"
+                    avatar: "https://octodex.github.com/images/adventure-cat.png`"
                 } )
             ] );
         } );

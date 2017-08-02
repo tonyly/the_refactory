@@ -18,10 +18,14 @@ function authorizedUser(req, res, next) {
 router.get("/", authorizedUser, function(req, res, next) {
   let userID = req.session.user.id;
   knex("users").where("id", userID).first().then(function (user){
+    knex("projects").then(function (projects){
     res.render("projects/home", {
-        user: user
+        user: user,
+        projects: projects,
   });
   console.log(user);
+  console.log(projects);
+});
 });
 });
 
@@ -36,13 +40,24 @@ router.get("/new", authorizedUser, function(req, res, next) {
 });
 
 router.get("/:id", authorizedUser, function(req, res, next) {
-  let userID = req.params.id;
+  let userID = req.session.user.id;
+  let projectID = req.params.id;
   knex("users").where("id", userID).first().then(function (user){
+    knex("projects").where("id", projectID).first().then(function (project){
     res.render("projects/single", {
-        user: user
+        user: user,
+        project: project,
   });
-  console.log(user);
+  console.log(project);
 });
+});
+});
+
+router.delete("/:id", function (req, res, next) {
+    let projectID = req.params.id;
+    knex("projects").where("id", projectID).del().then(function (deleted) {
+        res.redirect("/projects");
+    });
 });
 
 router.get("/:id/edit", authorizedUser, function(req, res, next) {

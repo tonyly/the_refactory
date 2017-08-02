@@ -5,9 +5,11 @@ todo
 8/1-8/4
 
 for the user
-  home displaying/delete projects
-  home displaying/delete clients
-  seed data
+  variables on home, edit, single (projects & clients)
+  delete projects route
+
+  single page (clients & projects)
+
   wipe/reset/seed data (local & heroku)
 
 for the admin
@@ -24,4 +26,5 @@ for the client
 analytics - sonarcube
 linter
 test
+ssv
 content update

@@ -19,10 +19,14 @@ function authorizedUser(req, res, next) {
 router.get("/", authorizedUser, function(req, res, next) {
   let userID = req.session.user.id;
   knex("users").where("id", userID).first().then(function (user){
+    knex("clients").then(function (clients){
     res.render("clients/home", {
-        user: user
+        user: user,
+        clients: clients,
   });
   console.log(user);
+  console.log(clients);
+});
 });
 });
 
@@ -37,12 +41,16 @@ router.get("/new", authorizedUser, function(req, res, next) {
 });
 
 router.get("/:id", authorizedUser, function(req, res, next) {
+  let userID = req.session.user.id;
   let clientID = req.params.id;
   knex("clients").where("id", clientID).first().then(function (client){
+    knex("users").where("id", userID).first().then(function (user){
     res.render("clients/single", {
-        client: client
+        user: user,
+        client: client,
   });
   console.log(client);
+});
 });
 });
 
