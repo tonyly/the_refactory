@@ -21,32 +21,32 @@
 </div>
 
     <div class="content animate-panel">
-
-        <div class="row projects">
+      <% projects.forEach(function (project) { %>
+        <div class="projects">
             <div class="col-lg-6">
                 <div class="hpanel hgreen">
                     <div class="panel-body">
-                        <span class="label label-success pull-right">NEW</span>
+                        <span class="label label-success pull-right"><%=project.status%></span>
                         <div class="row">
                             <div class="col-sm-8">
-                                <h4><a href=""> Desing project</a></h4>
+                                <h4><a href=""> <%=project.name%></a></h4>
 
                                 <p>
-                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has..
+                                  <%=project.description%>
                                 </p>
 
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <div class="project-label">CLIENT</div>
-                                        <small>Hendrix Corp</small>
+                                        <div class="project-label">id</div>
+                                        <small><%=project.id%></small>
                                     </div>
                                     <div class="col-sm-3">
-                                        <div class="project-label">VERSION</div>
-                                        <small>1.5.2</small>
+                                        <div class="project-label">Created</div>
+                                        <small><%=project.created_at%></small>
                                     </div>
                                     <div class="col-sm-3">
-                                        <div class="project-label">DEDLINE</div>
-                                        <small>12.06.2015</small>
+                                        <div class="project-label">Updated</div>
+                                        <small><%=project.updated_at%></small>
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="project-label">PROGRESS</div>
@@ -62,22 +62,12 @@
                                     <div class="btn-group">
                                         <button class="btn btn-xs btn-default"> View</button>
                                         <button class="btn btn-xs btn-default"> Edit</button>
-                                        <button class="btn btn-xs btn-default"> Delete</button>
                                     </div>
                                 </div>
                                 <div class="project-value">
                                     <h2 class="text-success">
                                         $1 206,40
                                     </h2>
-                                </div>
-                                <div class="project-people">
-                                    <img alt="logo" class="img-circle" src="images/a1.jpg">
-                                    <img alt="logo" class="img-circle" src="images/a2.jpg">
-                                    <img alt="logo" class="img-circle" src="images/a3.jpg">
-                                    <img alt="logo" class="img-circle" src="images/a4.jpg">
-                                    <img alt="logo" class="img-circle" src="images/a5.jpg">
-                                    <img alt="logo" class="img-circle" src="images/a6.jpg">
-                                    <img alt="logo" class="img-circle" src="images/a7.jpg">
                                 </div>
                             </div>
                         </div>
@@ -88,28 +78,8 @@
                 </div>
             </div>
         </div>
-
-        <div class="row projects">
-        </div>
-
-        <div class="row projects">
-        </div>
-
-        <div class="row projects">
-        </div>
-
-        <div class="row projects">
-        </div>
-
+        <% }) %>
     </div>
-
-    <!-- Footer-->
-    <footer class="footer">
-        <span class="pull-right">
-            The_ReFactory
-        </span>
-        Deloitte @2017
-    </footer>
 
 </div>
 

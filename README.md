@@ -5,10 +5,11 @@ todo
 8/1-8/4
 
 for the user
-  variables on home, edit, single (projects & clients)
-  delete projects route
+  variables on home & edit (projects & clients)
 
   single page (clients & projects)
+  variables on single (projects & clients)
+  delete projects button on single project page (are you sure?)
 
   wipe/reset/seed data (local & heroku)
 
