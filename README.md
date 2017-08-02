@@ -5,11 +5,9 @@ todo
 8/1-8/4
 
 for the user
-  single page (clients) - bug on avatar & map
+  single page (clients)
   variables on single (clients)
   delete projects button on single project page (are you sure?)
-
-  wipe/reset/seed data (local & heroku)
 
 for the admin
   home (users tab & Edit users sub dropdown)
