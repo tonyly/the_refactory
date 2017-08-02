@@ -27,7 +27,7 @@
             <div class="panel-body">
                 <span class="label label-success pull-right"><%=client.id%></span>
                 <img alt="logo" class="img-circle m-b" src="<%=client.avatar%>">
-                <h3><a href=""><%=client.first_name%> <%=client.last_name%> </a></h3>
+                <h3><a href="/clients/<%=client.id%>"><%=client.first_name%> <%=client.last_name%> </a></h3>
                 <div class="text-muted font-bold m-b-xs"><%=client.email%></div>
                 <p>
                       <%=client.created_at%>
@@ -45,8 +45,6 @@
     </div>
 <% }) %>
 </div>
-</div>
-
 </div>
 
 <% include partials/footer %>
