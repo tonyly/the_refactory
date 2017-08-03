@@ -17,7 +17,11 @@
             <div id="hbreadcrumb" class="pull-right m-t-lg">
                 <ol class="hbreadcrumb breadcrumb">
                     <li><a href="/clients/<%=client.id%>/edit">Edit</a></li>
-                    <li><a href="/clients/<%=client.id%>?_method=DELETE" method="POST">Delete</a></li>
+                    <li>
+                      <button id= "demo4" class="btn btn-danger"  data-style="zoom-in">Delete</button>
+                      <form style="hidden" action="/clients/<%=client.id%>?_method=DELETE" method="POST" id="form">
+                    </form>
+                    </li>
                 </ol>
             </div>
             <h2 class="font-light m-b-xs">
@@ -434,4 +438,29 @@ function init() {
     // Create the Google Map using elements
     var map1 = new google.maps.Map(mapElement1, mapOptions1);
 }
+
+$('#demo4').click(function () {
+    swal({
+                title: "Are you sure?",
+                text: "Your will not be able to recover this imaginary file!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel plx!",
+                closeOnConfirm: false,
+                closeOnCancel: false },
+            function (isConfirm) {
+                if (isConfirm) {
+                    swal("Deleted!", "Your client has been deleted.", "success");
+                    setTimeout(
+                    function()
+                    {
+                      $("#form").submit();
+                    }, 2000);
+                } else {
+                    swal("Cancelled", "Your imaginary client is safe ... for now.)", "error");
+                }
+            });
+});
 </script>

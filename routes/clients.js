@@ -59,7 +59,7 @@ router.get("/:id", authorizedUser, function(req, res, next) {
 });
 
 router.delete("/:id", function (req, res, next) {
-    let cientID = req.params.id;
+    let clientID = req.params.id;
     knex("clients").where("id", clientID).del().then(function (deleted) {
         res.redirect("/clients");
     });
