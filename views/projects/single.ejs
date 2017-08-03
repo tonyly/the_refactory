@@ -16,8 +16,10 @@
 
                 <div id="hbreadcrumb" class="pull-right m-t-lg">
                     <ol class="hbreadcrumb breadcrumb">
-                        <li><a href="/projects/<%=project.id%>/edit">Edit</a></li>
-                        <li class= "demo4"><a href="/projects/<%=project.id%>?_method=DELETE" method="POST">Delete</a></li>
+                        <a href="/projects/<%=project.id%>/edit"><button class="btn btn-success"  data-style="zoom-in">Edit</button> </a>
+                        <button id= "demo4" class="btn btn-danger"  data-style="zoom-in">Delete</button>
+                        <form style="hidden" action="/projects/<%=project.id%>?_method=DELETE" method="POST" id="form">
+                      </form>
                     </ol>
                 </div>
                 <h2 class="font-light m-b-xs">
@@ -371,3 +373,30 @@
 </div>
 
 <% include partials/footer %>
+
+<script>
+$('#demo4').click(function () {
+    swal({
+                title: "Are you sure?",
+                text: "Your will not be able to recover this project or it's clients!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel please!",
+                closeOnConfirm: false,
+                closeOnCancel: false },
+            function (isConfirm) {
+                if (isConfirm) {
+                    swal("Deleted!", "Your project & all affiliated clients has been deleted.", "success");
+                    setTimeout(
+                    function()
+                    {
+                      $("#form").submit();
+                    }, 2000);
+                } else {
+                    swal("Cancelled", "Your project is safe ... for now.)", "error");
+                }
+            });
+});
+</script>

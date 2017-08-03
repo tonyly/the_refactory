@@ -16,8 +16,7 @@
 
             <div id="hbreadcrumb" class="pull-right m-t-lg">
                 <ol class="hbreadcrumb breadcrumb">
-                    <li><a href="/clients/<%=client.id%>/edit">Edit</a></li>
-                    <li>
+                  <a href="/clients/<%=client.id%>/edit"><button class="btn btn-success"  data-style="zoom-in">Edit</button> </a>
                       <button id= "demo4" class="btn btn-danger"  data-style="zoom-in">Delete</button>
                       <form style="hidden" action="/clients/<%=client.id%>?_method=DELETE" method="POST" id="form">
                     </form>
@@ -442,12 +441,12 @@ function init() {
 $('#demo4').click(function () {
     swal({
                 title: "Are you sure?",
-                text: "Your will not be able to recover this imaginary file!",
+                text: "Your will not be able to recover this client!",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
                 confirmButtonText: "Yes, delete it!",
-                cancelButtonText: "No, cancel plx!",
+                cancelButtonText: "No, cancel please!",
                 closeOnConfirm: false,
                 closeOnCancel: false },
             function (isConfirm) {
@@ -459,7 +458,7 @@ $('#demo4').click(function () {
                       $("#form").submit();
                     }, 2000);
                 } else {
-                    swal("Cancelled", "Your imaginary client is safe ... for now.)", "error");
+                    swal("Cancelled", "Your client is safe ... for now.)", "error");
                 }
             });
 });
