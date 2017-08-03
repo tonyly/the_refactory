@@ -53,10 +53,15 @@ router.post("/login", function (req, res, next) {
             bcrypt.compare(req.body.password, user.hashed_password, function(err, result) {
                 if(result){
                     req.session.user = user;
+                      if(user.admin === true){
+                        res.clearCookie("registered");
+                        res.cookie("loggedin", true);
+                        return res.redirect("/admin");
+                      }
                     res.clearCookie("registered");
                     res.cookie("loggedin", true);
                     res.redirect("/users/"+ user.id);
-                } else {
+                  } else {
                     res.send("Something went wrong");
                 }
             });

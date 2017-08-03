@@ -17,6 +17,7 @@ const auth = require("./routes/auth");
 const users = require("./routes/users");
 const clients = require("./routes/clients");
 const projects = require("./routes/projects");
+const admin = require("./routes/admin");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -37,6 +38,7 @@ app.use("/users", users);
 app.use("/auth", auth);
 app.use("/clients", clients);
 app.use("/projects", projects);
+app.use("/admin", admin);
 
 app.listen(port, function () {
     console.log("hello from", port);

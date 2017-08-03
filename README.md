@@ -2,27 +2,33 @@
 
 todo
 
+
 8/1-8/4
 
-for the user
-  heroku db issue?
-  dropdown for select project in NEW/Client
-  variables on single (clients)
-  delete projects button on single project page (are you sure?)
+for the admins - can CRUD users, projects, & clients
+  - home (users tab & Edit users sub dropdown)
+  - new/edit/delete users (template)
 
-for the admin
-  home (users tab & Edit users sub dropdown)
-  new/edit/delete users (template)
+for the users - can CRUD projects & clients
+  -
+
+for the clients - can view project edit themselves
+  -
+
+
+
+
+
 
 
 ????s
-saving a json object or an array in DB
-anonymous?
+  - saving a json object or an array in DB
+  - anonymous?
 
 
-for the client
-analytics - sonarcube
-linter
-test
-ssv
-content update
+more
+  - analytics - sonarcube
+  - linter
+  - test
+  - ssv
+  - content update
