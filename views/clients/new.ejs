@@ -3,7 +3,7 @@
 <div class="back-link">
     <a href="/users/<%=user.id%>" class="btn btn-primary">Back</a>
 </div>
-<div class="register-container">
+<div class="register-container animate-panel">
     <div class="row">
         <div class="col-md-12">
             <div class="text-center m-b-md">
@@ -13,25 +13,30 @@
                 <div class="panel-body">
                         <form action="/clients/new" id="loginForm" method="POST">
                             <div class="row">
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-lg-12">
                                 <label>Email</label>
                                 <input type="" value="" id="" class="form-control" name="email" required>
                             </div>
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-lg-4">
                                 <label>First Name</label>
                                 <input type="" value="" id="" class="form-control" name="first_name" required>
                             </div>
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-lg-4">
                                 <label>Last Name</label>
                                 <input type="" value="" id="" class="form-control" name="last_name" required>
                             </div>
-                            <div class="form-group col-lg-6">
-                                <label>Project</label>
-                                <input type="" value="" id="" class="form-control" name="project" required>
+                            <div class="btn-group col-lg-4">
+                              <br>
+                              <select name="project" required>
+                                <option value="" disabled selected>Project</option>
+                                <% projects.forEach(function (project) { %>
+                                <option value="<%=project.id%>"><%=project.name%></option>
+                                <% }) %>
+                            </select>
                             </div>
                             </div>
                             <div class="text-center">
-                                <button class="btn btn-success">Create Client</button>
+                              <br><button class="btn btn-success"  data-style="zoom-in">Submit</button>
                             </div>
                         </form>
                 </div>

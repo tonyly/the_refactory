@@ -5,7 +5,8 @@ todo
 8/1-8/4
 
 for the user
-  single page (clients)
+  heroku db issue?
+  dropdown for select project in NEW/Client
   variables on single (clients)
   delete projects button on single project page (are you sure?)
 

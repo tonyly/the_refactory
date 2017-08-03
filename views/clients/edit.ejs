@@ -3,7 +3,7 @@
 <div class="back-link">
     <a href="/users/<%=user%>" class="btn btn-primary">Back</a>
 </div>
-<div class="register-container">
+<div class="register-container animate-panel">
     <div class="row">
         <div class="col-md-12">
             <div class="text-center m-b-md">
@@ -29,9 +29,14 @@
                                 <label>Avatar</label>
                                 <input type="" value="<%=client.avatar%>" id="" class="form-control" name="avatar" required>
                             </div>
-                            <div class="form-group col-lg-6">
-                                <label>Project</label>
-                                <input type="" value="<%=client.project%>" id="" class="form-control" name="project" required>
+                            <div class="btn-group col-lg-6">
+                              <br>
+                              <select name="project" required>
+                                <option value="<%client.project_id%>" disabled selected><%=client.project_id%></option>
+                                <% projects.forEach(function (project) { %>
+                                <option value="<%=project.id%>"><%=project.name%></option>
+                                <% }) %>
+                            </select>
                             </div>
                             </div>
                             <div class="text-center">

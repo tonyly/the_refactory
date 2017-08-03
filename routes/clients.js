@@ -33,10 +33,14 @@ router.get("/", authorizedUser, function(req, res, next) {
 router.get("/new", authorizedUser, function(req, res, next) {
   let userID = req.session.user.id;
   knex("users").where("id", userID).first().then(function (user){
+    knex("projects").then(function (projects){
     res.render("clients/new", {
-        user: user
+        user: user,
+        projects: projects,
   });
   console.log(user);
+  console.log(projects);
+});
 });
 });
 
@@ -54,15 +58,25 @@ router.get("/:id", authorizedUser, function(req, res, next) {
 });
 });
 
+router.delete("/:id", function (req, res, next) {
+    let cientID = req.params.id;
+    knex("clients").where("id", clientID).del().then(function (deleted) {
+        res.redirect("/clients");
+    });
+});
+
 router.get("/:id/edit", authorizedUser, function(req, res, next) {
   let clientID = req.params.id;
   let user = req.session.user.id;
   knex("clients").where("id", clientID).first().then(function (client){
+    knex("projects").then(function (projects){
     res.render("clients/edit", {
         client: client,
         user: user,
+        projects: projects,
   });
   console.log(client);
+});
 });
 });
 
