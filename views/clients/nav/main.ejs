@@ -162,6 +162,11 @@
         </div>
 
         <ul class="nav" id="side-menu">
+          <% if (user.admin === true){ %>
+          <li>
+              <a href="/admin%>"> <span class="nav-label">Admin</span> </a>
+          </li>
+          <%}%>
             <li>
                 <a href="/users/<%=user.id%>"> <span class="nav-label">Dashboard</span> </a>
             </li>

@@ -6,8 +6,6 @@ todo
 8/1-8/4
 
 for the admins - can CRUD users, projects, & clients
-  - as admin, can see admin tab on all nav segments
-  - edit users sub dropdown
   - home/edit/new/single for users
   - routes
   - push
@@ -30,6 +28,7 @@ for the clients - can view project edit themselves
 
 
 more
+  - works on all browsers & devices?
   - analytics - sonarcube
   - linter
   - test
