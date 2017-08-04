@@ -6,8 +6,7 @@ todo
 8/1-8/4
 
 for the admins - can CRUD users, projects, & clients
-  - home/edit/new/single for users
-  - routes
+  - edit/new/single/delete for users
   - push
 
 for the users - can CRUD projects & clients

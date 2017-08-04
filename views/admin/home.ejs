@@ -13,6 +13,11 @@
                     <i class="fa fa-arrow-up"></i>
                 </div>
             </a>
+            <div id="hbreadcrumb" class="pull-right m-t-lg">
+                <ol class="hbreadcrumb breadcrumb">
+                  <a href="/admin/user/new"><button class="btn btn-primary2"  data-style="zoom-in">New</button> </a>
+                </ol>
+            </div>
             <h2 class="font-light m-b-xs">
                 Admin Panel
             </h2>
@@ -64,8 +69,10 @@
                                     <td><%=user.first_name%></td>
                                     <td><%=user.last_name%></td>
                                     <td><%=user.created_at%></td>
-                                    <td><%=user.updated_at%>/td>
-                                    <td><a href="/admin/user/<%=user.id%>/edit"><i class="fa fa-edit text-success"></i></a></td>
+                                    <td><%=user.updated_at%></td>
+                                    <td>
+                                      <a href="/admin/user/<%=user.id%>"><i class="fa fa-edit text-success"></i></a>
+                                    </td>
                                 </tr>
                                 <% }) %>
                                 </tbody>

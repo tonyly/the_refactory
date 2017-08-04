@@ -30,7 +30,7 @@
                         <a class="" href="/auth/logout">Logout</a>
                     </li>
                     <li>
-                        <a class="" href="/users/<%=user.id%>/edit">Profile</a>
+                        <a class="" href="/users/<%=admin.id%>/edit">Profile</a>
                     </li>
                 </ul>
             </div>
@@ -58,19 +58,19 @@
                             <tbody>
                             <tr>
                                 <td>
-                                    <a href="/users/<%=user.id%>">
+                                    <a href="/users/<%=admin.id%>">
                                         <i class="pe pe-7s-portfolio text-info"></i>
                                         <h5>Dashboard</h5>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/messages/<%=user.id%>">
+                                    <a href="/messages/<%=admin.id%>">
                                         <i class="pe pe-7s-mail text-warning"></i>
                                         <h5>Messages</h5>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/projects/<%=user.id%>">
+                                    <a href="/projects/<%=admin.id%>">
                                         <i class="pe pe-7s-users text-success"></i>
                                         <h5>Projects</h5>
                                     </a>
@@ -78,19 +78,19 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="/notifications/<%=user.id%>">
+                                    <a href="/notifications/<%=admin.id%>">
                                         <i class="pe pe-7s-comment text-info"></i>
                                         <h5>Notifications</h5>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/analytics/<%=user.id%>">
+                                    <a href="/analytics/<%=admin.id%>">
                                         <i class="pe pe-7s-graph1 text-danger"></i>
                                         <h5>Analytics</h5>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/files/<%=user.id%>">
+                                    <a href="/files/<%=admin.id%>">
                                         <i class="pe pe-7s-box1 text-success"></i>
                                         <h5>Files</h5>
                                     </a>
@@ -131,18 +131,18 @@
     <div id="navigation">
         <div class="profile-picture">
             <a href="index.html">
-                <img src="<%=user.avatar%>" height="70" width="70" class="img-circle m-b" alt="logo">
+                <img src="<%=admin.avatar%>" height="70" width="70" class="img-circle m-b" alt="logo">
             </a>
 
             <div class="stats-label text-color">
-                <span class="font-extra-bold font-uppercase"><%=user.first_name%> <%=user.last_name%></span>
+                <span class="font-extra-bold font-uppercase"><%=admin.first_name%> <%=admin.last_name%></span>
 
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-                        <small class="text-muted"> Admin: <%=user.admin%> <b class="caret"></b></small>
+                        <small class="text-muted"> Admin: <%=admin.admin%> <b class="caret"></b></small>
                     </a>
                     <ul class="dropdown-menu animated flipInX m-t-xs">
-                      <li><a href="/users/<%=user.id%>/edit">Edit Profile</a></li>
+                      <li><a href="/admin/<%=admin.id%>/edit">Edit Profile</a></li>
                       <li><a href="/projects/new">Add Projects</a></li>
                       <li><a href="/clients/new">Add Clients</a></li>
                       <li class="divider"></li>
@@ -166,7 +166,7 @@
               <a href="/admin"> <span class="nav-label">Admin</span> </a>
           </li>
             <li>
-                <a href="/users/<%=user.id%>"> <span class="nav-label">Dashboard</span> </a>
+                <a href="/users/<%=admin.id%>"> <span class="nav-label">Dashboard</span> </a>
             </li>
             <li>
                 <a href="/projects"> <span class="nav-label">Projects</span> </a>
