@@ -6,8 +6,11 @@ todo
 8/1-8/4
 
 for the admins - can CRUD users, projects, & clients
-  - home (users tab & Edit users sub dropdown)
-  - new/edit/delete users (template)
+  - as admin, can see admin tab on all nav segments
+  - edit users sub dropdown
+  - home/edit/new/single for users
+  - routes
+  - push
 
 for the users - can CRUD projects & clients
   -
