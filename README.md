@@ -6,8 +6,7 @@ todo
 8/1-8/4
 
 for the admins - can CRUD users, projects, & clients
-  - edit/new/single/delete for users
-  - push
+  - only admin can delete clients & projects
 
 for the users - can CRUD projects & clients
   -

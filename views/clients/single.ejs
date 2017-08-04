@@ -17,9 +17,11 @@
             <div id="hbreadcrumb" class="pull-right m-t-lg">
                 <ol class="hbreadcrumb breadcrumb">
                   <a href="/clients/<%=client.id%>/edit"><button class="btn btn-success"  data-style="zoom-in">Edit</button> </a>
+                        <% if(user.admin === true){ %>
                       <button id= "demo4" class="btn btn-danger"  data-style="zoom-in">Delete</button>
                       <form style="hidden" action="/clients/<%=client.id%>?_method=DELETE" method="POST" id="form">
                     </form>
+                    <%}%>
                     </li>
                 </ol>
             </div>

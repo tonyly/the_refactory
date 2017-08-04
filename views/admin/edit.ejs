@@ -1,21 +1,14 @@
 <% include forms/header %>
 
 <div class="back-link">
-    <a href="/admin" class="btn btn-primary">Back</a>
+    <a href="/admin/user/<%=user.id%>" class="btn btn-primary">Back</a>
 </div>
 <div class="register-container animate-panel">
     <div class="row">
         <div class="col-md-12">
             <div class="text-center m-b-md">
                 <h3>Edit User</h3>
-            </div>
-
-            Email
-Username
-Password
-First Name
-Last Name
-
+            </div
             <div class="hpanel">
                 <div class="panel-body">
                         <form action="/admin/user/<%=user.id%>?_method=PUT" id="loginForm" method="POST">
@@ -42,7 +35,7 @@ Last Name
                             </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-success">Edit User</button>
+                                <button type="submit" class="btn btn-success">Submit</button>
                             </div>
                         </form>
                 </div>

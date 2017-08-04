@@ -17,13 +17,15 @@
                 <div id="hbreadcrumb" class="pull-right m-t-lg">
                     <ol class="hbreadcrumb breadcrumb">
                         <a href="/projects/<%=project.id%>/edit"><button class="btn btn-success"  data-style="zoom-in">Edit</button> </a>
+                        <% if(user.admin === true){ %>
                         <button id= "demo4" class="btn btn-danger"  data-style="zoom-in">Delete</button>
                         <form style="hidden" action="/projects/<%=project.id%>?_method=DELETE" method="POST" id="form">
                       </form>
+                      <% } %>
                     </ol>
                 </div>
                 <h2 class="font-light m-b-xs">
-                  <%=project.name%>
+                  Project Profile
                 </h2>
             </div>
         </div>
@@ -36,7 +38,7 @@
             <div class="col-md-8">
 
                 <div class="font-bold m-b-sm">
-                    Project details
+                    Project information
                 </div>
 
                 <div class="hpanel">
@@ -46,7 +48,7 @@
                             <button class="btn btn-success btn-xs">  Active</button>
                             <button class="btn btn-default btn-xs"> <i class="fa fa-pencil"></i> Edit</button>
                         </div>
-                        <h2 class="m-t-none">Common project </h2>
+                        <h2 class="m-t-none"><%=project.name%> </h2>
                         <small>
                             A wonderful serenity has taken possession of my entire soul, like these sweet mornings of
                             spring which I enjoy with my whole heart.

@@ -52,6 +52,7 @@ router.get("/user/:id", authorizedAdmin, function(req, res, next) {
     res.render("admin/single", {
         user: user,
         admin: admin,
+        adminID: adminID,
   });
 });
 });
