@@ -6,6 +6,8 @@ const express = require("express");
 const router = express.Router();
 const knex = require("../db/knex");
 const createAvatar = require("../public/javascripts/octodex_avatar");
+const nodemailer = require("nodemailer");
+
 
 function authorizedUser(req, res, next) {
     let userID = req.session.user.id;
@@ -81,7 +83,7 @@ router.get("/:id/edit", authorizedUser, function(req, res, next) {
 });
 
 router.post("/new", function (req, res, next) {
-  let userID = req.session.user.id;
+  let userID = req.session.user;
     knex("clients").where({
         email: req.body.email
     }).first().then(function(client){
@@ -92,13 +94,34 @@ router.post("/new", function (req, res, next) {
                       last_name: req.body.last_name,
                       email: req.body.email,
                       avatar: created_avatar,
-                      user_id: userID,
+                      user_id: userID.id,
                       project_id: req.body.project,
+
+                    }).then(function (){
+                      smtpTrans = nodemailer.createTransport({
+                          service: "Gmail",
+                          auth: {
+                              user: process.env.GMAIL_USER,
+                              pass: process.env.GMAIL_PASS,
+                          }
+                      });
+                      mailOpts = {
+                          from: userID.email,
+                          to: req.body.email,
+                          subject: "Welcome to The_Refactory",
+                          text: "Welcome" + req.body.first_name + " , <br> You have been added as a client to a migration project by our representatives. <br> You can log on here with your email and a generated password: password1 <br> https://therefactory.herokuapp.com/login ",
+                          bcc: process.env.MY_EMAIL,
+                      };
+                      smtpTrans.sendMail(mailOpts, function (error, response) {
+                          if (error) {
+                              res.send("email not sent");
+                          }
+                      });
+                    })
                     }).then(function (){
                         res.redirect("/clients");
                     });
-                });
-        } else {
+                } else {
             res.send("Something went wrong");
         }
     });

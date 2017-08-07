@@ -4,15 +4,22 @@ todo
 
 8/7-8/11
 
-Admins - can CRUD users, projects, & clients
-  - 5 emails with nodemailer - when user is created to admin >> email sent to created user themselves ; when a client is created to admin >> email sent to created client themselves; when project is created to admin
+Email todo
+  - set up email account
+  - update dotenv
+  - heroku email credentials
+  - test format
 
-  ** ensure admin has to log in to see link
+Admins - Verify email works (local & heroku)
+  - created user (admin & user)
+  - create client (admin & client)
+  - created project (admin)
 
-Users - can CRU projects & clients
-  - 3 emails with nodemailer - when client is created to user >> email sent to created client themselves; when project is created to user  
+Users - Verify email works (local & heroku)
+  - create client (user & client)
+  - created project (user)
 
-  ** ensure user has to log in to see link
+  *************************************
 
 Clients - can view project edit themselves
   - log on - dashboard, project, analytics tabs
@@ -21,7 +28,6 @@ Misc.
   - light grey fills to the bottom on all screens
   - animate panels looks jenky
   - logo
-
 
 *************************************
 

@@ -5,6 +5,8 @@
 const express = require("express");
 const router = express.Router();
 const knex = require("../db/knex");
+const nodemailer = require("nodemailer");
+
 
 function authorizedUser(req, res, next) {
     let userID = req.session.user.id;
@@ -76,7 +78,7 @@ router.get("/:id/edit", authorizedUser, function(req, res, next) {
 });
 
 router.post("/new", function (req, res, next) {
-  let userID = req.session.user.id;
+  let userID = req.session.user;
     knex("projects").where({
         name: req.body.name
     }).first().then(function(project){
@@ -86,11 +88,32 @@ router.post("/new", function (req, res, next) {
                       description: req.body.description,
                       status: req.body.status,
                       avatar: req.body.avatar,
-                      user_id: userID,
+                      user_id: userID.id,
+
                     }).then(function (){
-                        res.redirect("/projects");
-                  })
-        } else {
+                      smtpTrans = nodemailer.createTransport({
+                          service: "Gmail",
+                          auth: {
+                              user: process.env.GMAIL_USER,
+                              pass: process.env.GMAIL_PASS,
+                          }
+                      });
+                      mailOpts = {
+                          from: userID.email,
+                          to: userID.email,
+                          subject: "You have Created a Project on The_Refactory",
+                          text: "You have created a project called " + req.body.name ,
+                          bcc: process.env.MY_EMAIL,
+                      };
+                      smtpTrans.sendMail(mailOpts, function (error, response) {
+                          if (error) {
+                              res.send("email not sent");
+                          }
+                      });
+                    }).then(function (){
+                      res.redirect("/projects");
+                    });
+                } else {
             res.send("Something went wrong");
         }
     });
