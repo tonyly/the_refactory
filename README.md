@@ -15,7 +15,7 @@ Users - can CRU projects & clients
   ** ensure user has to log in to see link
 
 Clients - can view project edit themselves
-  - log on - dashboard, projects, analytics tabs
+  - log on - dashboard, project, analytics tabs
 
 Misc.
   - light grey fills to the bottom on all screens
