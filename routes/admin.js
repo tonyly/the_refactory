@@ -82,6 +82,7 @@ router.get("/user/:id/edit", authorizedAdmin, function(req, res, next) {
 
 router.post("/user/new", function (req, res, next) {
   let adminID = req.session.user;
+  let smtpTrans, mailOpts
     knex("users").where({
         email: req.body.email
     }).first().then(function(user){
@@ -97,14 +98,14 @@ router.post("/user/new", function (req, res, next) {
                       avatar: created_avatar,
 
                     }).then(function (){
-                      smtpTrans = nodemailer.createTransport({
+                       smtpTrans = nodemailer.createTransport({
                           service: "Gmail",
                           auth: {
                               user: process.env.GMAIL_USER,
-                              pass: process.env.GMAIL_PASS,
+                              pass: process.env.GMAIL_PASS
                           }
                       });
-                      mailOpts = {
+                       mailOpts = {
                           from: adminID.email,
                           to: req.body.email,
                           subject: "Welcome to The_Refactory",
@@ -113,17 +114,17 @@ router.post("/user/new", function (req, res, next) {
                       };
                       smtpTrans.sendMail(mailOpts, function (error, response) {
                           if (error) {
-                              res.send("email not sent");
+                              res.send(error);
+                          } else{
+                            res.redirect("/admin");
                           }
                       });
-                    })
-                    }).then(function (){
-                        res.redirect("/admin");
-                    });
-                } else {
-            res.send("Something went wrong");
-        }
+          });
     });
+} else{
+  res.send("user already in our system");
+}
+});
 });
 
 router.put("/user/:id", authorizedAdmin, function (req, res, next) {

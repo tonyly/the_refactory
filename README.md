@@ -2,10 +2,11 @@
 
 todo
 
-8/7-8/11
+8/14-8/18
 
 Email todo
   - set up email account
+  - favicon
   - update dotenv
   - heroku email credentials
   - test format
