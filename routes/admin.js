@@ -114,7 +114,7 @@ router.post("/user/new", function (req, res, next) {
                       };
                       smtpTrans.sendMail(mailOpts, function (error, response) {
                           if (error) {
-                              res.send(error);
+                              res.send("something went wrong, a user is created but no email was sent");
                           } else{
                             res.redirect("/admin");
                           }

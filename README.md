@@ -2,13 +2,10 @@
 
 todo
 
-8/14-8/18
+8/21-8/24
 
 Email todo
-  - set up email account
   - favicon
-  - update dotenv
-  - heroku email credentials
   - test format
 
 Admins - Verify email works (local & heroku)
