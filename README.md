@@ -5,8 +5,7 @@ todo
 8/21-8/24
 
 Email todo
-  - favicon
-  - test format
+  - test emails
 
 Admins - Verify email works (local & heroku)
   - created user (admin & user)
@@ -25,7 +24,6 @@ Clients - can view project edit themselves
 Misc.
   - light grey fills to the bottom on all screens
   - animate panels looks jenky
-  - logo
 
 *************************************
 
