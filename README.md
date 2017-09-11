@@ -2,21 +2,7 @@
 
 todo
 
-8/21-8/24
-
-Email todo
-  - test emails
-
-Admins - Verify email works (local & heroku)
-  - created user (admin & user)
-  - create client (admin & client)
-  - created project (admin)
-
-Users - Verify email works (local & heroku)
-  - create client (user & client)
-  - created project (user)
-
-  *************************************
+9/11-9/14
 
 Clients - can view project edit themselves
   - log on - dashboard, project, analytics tabs
@@ -24,6 +10,7 @@ Clients - can view project edit themselves
 Misc.
   - light grey fills to the bottom on all screens
   - animate panels looks jenky
+  - content update
 
 *************************************
 
@@ -40,4 +27,3 @@ more
   - clean up dupes & dead
   - test
   - ssv
-  - content update
