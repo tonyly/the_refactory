@@ -6,6 +6,7 @@ todo
 
 Clients - can view project edit themselves
   - log on - dashboard, project, analytics tabs
+  - can message the project creator
 
 Misc.
   - light grey fills to the bottom on all screens
@@ -17,7 +18,6 @@ Misc.
 ????s
   - saving a json object or an array in DB
   - anonymous?
-
 
 more
   - works on all browsers & devices?
