@@ -2,7 +2,7 @@
 
 todo
 
-9/11-9/14
+9/18-9/22
 
 Clients - can view project edit themselves
   - log on - dashboard, project, analytics tabs
