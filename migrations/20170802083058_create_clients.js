@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
         table.increments();
         table.string("first_name").defaultTo("");
         table.string("last_name").defaultTo("");
+        table.string("username").unique();
         table.string("email").unique();
         table.string("hashed_password").defaultTo("password1");
         table.string("avatar");
