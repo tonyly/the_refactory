@@ -60,28 +60,29 @@
 <% include partials/footer %>
 
 <script>
+
 $('#logout').click(function () {
     swal({
                 title: "Logging you off",
-                text: "Bye",
+                text: "Are you sure?",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes, stay logged on!",
-                cancelButtonText: "No, log me off!",
+                confirmButtonText: "Yes, log off!",
+                cancelButtonText: "No, lets stay!",
                 closeOnConfirm: false,
                 closeOnCancel: false },
-            function (isConfirm) {
-                if (isConfirm) {
-                    swal("Deleted!", "Your project & all affiliated clients has been deleted.", "success");
-                    setTimeout(
-                    function()
-                    {
-                      $("#form").submit();
-                    }, 2000);
-                } else {
-                    swal("Cancelled", "Your project is safe ... for now.)", "error");
-                }
-            });
+                function (isConfirm) {
+                    if (isConfirm) {
+                      swal("Bye Champ", "See you soon!", "error");
+                        setTimeout(
+                        function()
+                        {
+                          window.location.href = "http://localhost:3000/auth/logout"
+                        }, 1000);
+                    }else {
+                        swal("Glad to see you stay", "We were about to lose out shit", "success");
+                    }
+                });
 });
 </script>
