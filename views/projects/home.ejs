@@ -4,7 +4,6 @@
 
 <!-- Main Wrapper -->
 <div id="wrapper">
-  <div class="content animate-panel">
 <div class="normalheader ">
     <div class="hpanel">
         <div class="panel-body">
@@ -25,8 +24,9 @@
     </div>
 </div>
 
-    <div class="content">
-      <% projects.forEach(function (project) { %>
+<div class="content animate-panel">
+<div class="row">
+        <% projects.forEach(function (project) { %>
         <div class="projects">
             <div class="col-lg-6">
                 <div class="hpanel hgreen">
@@ -85,7 +85,6 @@
             <% }) %>
         </div>
     </div>
-
 </div>
 </div>
 <% include partials/footer %>

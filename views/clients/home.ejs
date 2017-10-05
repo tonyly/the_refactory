@@ -4,8 +4,6 @@
 
 <!-- Main Wrapper -->
 <div id="wrapper">
-  <div class="content animate-panel">
-
 <div class="normalheader ">
     <div class="hpanel">
         <div class="panel-body">
@@ -26,8 +24,10 @@
     </div>
 </div>
 
-<div class="content">
+<div class="content animate-panel">
+  <div class="row">
   <% clients.forEach(function (client) { %>
+    <div class="projects">
     <div class="col-lg-3">
       <a href="/clients/<%=client.id%>">
         <div class="hpanel hgreen contact-panel">
@@ -55,5 +55,33 @@
 </div>
 </div>
 </div>
+</div>
 
 <% include partials/footer %>
+
+<script>
+$('#logout').click(function () {
+    swal({
+                title: "Logging you off",
+                text: "Bye",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, stay logged on!",
+                cancelButtonText: "No, log me off!",
+                closeOnConfirm: false,
+                closeOnCancel: false },
+            function (isConfirm) {
+                if (isConfirm) {
+                    swal("Deleted!", "Your project & all affiliated clients has been deleted.", "success");
+                    setTimeout(
+                    function()
+                    {
+                      $("#form").submit();
+                    }, 2000);
+                } else {
+                    swal("Cancelled", "Your project is safe ... for now.)", "error");
+                }
+            });
+});
+</script>
