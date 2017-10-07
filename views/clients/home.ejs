@@ -58,31 +58,3 @@
 </div>
 
 <% include partials/footer %>
-
-<script>
-
-$('#logout').click(function () {
-    swal({
-                title: "Logging you off",
-                text: "Are you sure?",
-                type: "error",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes, log off!",
-                cancelButtonText: "No, lets stay!",
-                closeOnConfirm: false,
-                closeOnCancel: false },
-                function (isConfirm) {
-                    if (isConfirm) {
-                      swal("Bye Champ", "See you soon!", "success");
-                        setTimeout(
-                        function()
-                        {
-                          window.location.href = "http://localhost:3000/auth/logout"
-                        }, 1000);
-                    }else {
-                        swal({   title: "Glad to see you stay!",   text: "We were about to lose out shit",   imageUrl: "images/tacogif.gif" });
-                    }
-                });
-});
-</script>
