@@ -6,7 +6,6 @@ todo
 
 Misc.
   - tacogif missing in the single pages
-  - logoff not working on user/home
   - admin/user/single & client/single looks jenky (google maps issue)
   - email issue for projects & clients
   - content update
