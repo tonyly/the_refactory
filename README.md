@@ -5,8 +5,7 @@ todo
 10/2-10/6
 
 Misc.
-  - tacogif missing in the single pages
-  - admin/user/single & client/single looks jenky (google maps issue)
+  - jenky screen issue, what is it?
   - email issue for projects & clients
   - content update
 
