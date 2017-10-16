@@ -6,6 +6,7 @@ todo
 
 Misc.
   - jenky screen issue, what is it?
+  - heroku test
   - email issue for projects & clients
   - content update
 
