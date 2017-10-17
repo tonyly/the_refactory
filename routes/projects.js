@@ -79,6 +79,7 @@ router.get("/:id/edit", authorizedUser, function(req, res, next) {
 
 router.post("/new", function (req, res, next) {
   let userID = req.session.user;
+  let smtpTrans, mailOpts
     knex("projects").where({
         name: req.body.name
     }).first().then(function(project){
