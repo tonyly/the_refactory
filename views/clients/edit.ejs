@@ -25,11 +25,17 @@
                                 <label>Last Name</label>
                                 <input type="" value="<%=client.last_name%>" id="" class="form-control" name="last_name" required>
                             </div>
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-lg-4">
                                 <label>Avatar</label>
                                 <input type="" value="<%=client.avatar%>" id="" class="form-control" name="avatar" required>
                             </div>
-                            <div class="btn-group col-lg-6">
+                            <div class="form-group col-lg-4">
+                                <label>Password</label>
+                                <input type="password" id="" class="form-control" name="password" required>
+                            </div>
+
+                            <% if (clients_project === null){%>
+                            <div class="btn-group col-lg-4">
                               <br>
                               <select name="project" required>
                                 <option value="<%clients_project.name%>" disabled selected><%=clients_project.name%></option>
@@ -38,6 +44,20 @@
                                 <% }) %>
                             </select>
                             </div>
+                            <% }else{ %>
+
+                              <div class="btn-group col-lg-4">
+                                <br>
+                                <select name="project" required>
+                                  <option disabled selected>Unassigned</option>
+                                  <% projects.forEach(function (project) { %>
+                                  <option value="<%=project.id%>"><%=project.name%></option>
+                                  <% }) %>
+                              </select>
+                              </div>
+                              <% } %>
+
+
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-success">Submit</button>

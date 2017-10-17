@@ -3,13 +3,12 @@
 todo
 
 10/16-10/20
-- deleting users on admin deletes everything
-- dont delete clients when i delete a project
-- edit password issue
+- deleting users on admin deletes everything (children deletion)
+  - don't delete clients when i delete a project
 - jenky screen issue, what is it?
 
-- message functionality
 - client page
+- message feature
 
 Misc.
   - heroku test (with seeds & restart)

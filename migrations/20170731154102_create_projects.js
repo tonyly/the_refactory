@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
         table.string("description").defaultTo("");
         table.string("status").defaultTo("");
         table.string("avatar").defaultTo("");
-        table.integer("user_id").unsigned().index().references("id").inTable("users").onDelete("CASCADE");
+        table.integer("user_id").unsigned().index().references("id").inTable("users").onDelete("SET NULL");
         table.timestamps(true, true);
     });
 };

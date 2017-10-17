@@ -7,6 +7,8 @@ const router = express.Router();
 const knex = require("../db/knex");
 const createAvatar = require("../public/javascripts/octodex_avatar");
 const nodemailer = require("nodemailer");
+const bcrypt = require("bcrypt");
+
 
 
 function authorizedAdmin(req, res, next) {
@@ -130,13 +132,14 @@ router.post("/user/new", function (req, res, next) {
 
 router.put("/user/:id", authorizedAdmin, function (req, res, next) {
     let userID = req.params.id;
+    let hash = bcrypt.hashSync(req.body.password, 12);
     knex("users").where("id", userID).update({
       first_name: req.body.first_name,
       username: req.body.username,
       last_name: req.body.last_name,
       email: req.body.email,
       avatar: req.body.avatar,
-      hashed_password: req.body.password,
+      hashed_password: hash,
     }).then(function (){
         res.redirect("/admin");
     });

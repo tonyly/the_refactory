@@ -37,7 +37,7 @@ router.get("/:id/edit", authorizedUser, function(req, res, next) {
 });
 
 
-router.put("/:id", authorizedUser, function (req, res, next) {
+router.put("/:id", authorizedUser, function (req, res, next) { 
     let userID = req.session.user.id;
     let hash = bcrypt.hashSync(req.body.password, 12);
     knex("users").where("id", userID).update({
