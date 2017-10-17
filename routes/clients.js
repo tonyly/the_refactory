@@ -97,9 +97,12 @@ router.post("/new", function (req, res, next) {
                       first_name: req.body.first_name,
                       last_name: req.body.last_name,
                       email: req.body.email,
+                      username: req.body.username,
                       avatar: created_avatar,
                       user_id: userID.id,
                       project_id: req.body.project,
+                      //password1
+                      hashed_password: "$2a$12$65iDLL6bbEuqaz.1dHaJa.un61um2yPYnj3bXoW2WXoyDEF9Ruqs2",
 
                     }).then(function (){
                       smtpTrans = nodemailer.createTransport({
@@ -113,17 +116,17 @@ router.post("/new", function (req, res, next) {
                           from: userID.email,
                           to: req.body.email,
                           subject: "Welcome to The_Refactory",
-                          text: "Welcome" + req.body.first_name + " , <br> You have been added as a client to a migration project by our representatives. <br> You can log on here with your email and a generated password: password1 <br> https://therefactory.herokuapp.com/login ",
+                          text: "Welcome " + req.body.first_name + " , You have been added as a client to a migration project by our representatives. You can log on here with your username: " + req.body.username + " and a generated password: password1 https://therefactory.herokuapp.com/login ",
                           bcc: process.env.MY_EMAIL,
                       };
                       smtpTrans.sendMail(mailOpts, function (error, response) {
                           if (error) {
                               res.send("email not sent");
+                          } else{
+                            res.redirect("/clients")
                           }
                       });
                     })
-                    }).then(function (){
-                        res.redirect("/clients");
                     });
                 } else {
             res.send("Something went wrong");

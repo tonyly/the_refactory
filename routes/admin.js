@@ -94,7 +94,8 @@ router.post("/user/new", function (req, res, next) {
                       username: req.body.username,
                       last_name: req.body.last_name,
                       email: req.body.email,
-                      hashed_password: req.body.password,
+                      //password1
+                      hashed_password: "$2a$12$65iDLL6bbEuqaz.1dHaJa.un61um2yPYnj3bXoW2WXoyDEF9Ruqs2",
                       avatar: created_avatar,
 
                     }).then(function (){

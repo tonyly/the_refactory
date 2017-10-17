@@ -3,12 +3,13 @@
 todo
 
 10/16-10/20
--
-- emails work? (new project & new client)
-
+- deleting users on admin deletes everything
 - dont delete clients when i delete a project
 - edit password issue
 - jenky screen issue, what is it?
+
+- message functionality
+- client page
 
 Misc.
   - heroku test (with seeds & restart)
@@ -29,6 +30,14 @@ more
   - ssv
 
 
-add project
-add client
-register
+
+
+  Dropdb the_refactory-dev
+  Createdb	the_refactory-dev
+  Knex migrate:latest
+  Knex seed:run
+  Psql the_refactory-dev
+
+  ALTER SEQUENCE users_id_seq RESTART WITH 1000;
+  ALTER SEQUENCE projects_id_seq RESTART WITH 1000;
+  ALTER SEQUENCE clients_id_seq RESTART WITH 1000;

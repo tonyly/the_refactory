@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
         table.string("last_name").defaultTo("");
         table.string("username").unique();
         table.string("email").unique();
-        table.string("hashed_password").defaultTo("password1");
+        table.string("hashed_password");
         table.string("avatar");
         table.integer("user_id").unsigned().index().references("id").inTable("users").onDelete("CASCADE");
         table.integer("project_id").unsigned().index().references("id").inTable("projects").onDelete("CASCADE");
