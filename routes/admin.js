@@ -109,7 +109,7 @@ router.post("/user/new", function (req, res, next) {
                           from: adminID.email,
                           to: req.body.email,
                           subject: "Welcome to The_Refactory",
-                          text: "Welcome " + req.body.first_name + " , You have been added as a user by our representative. You can log on here with your email and a generated password: password1 - https://therefactory.herokuapp.com/login ",
+                          text: "Welcome " + req.body.first_name + " , You have been added as a user to The_Refactory. You can log on here with your username: " + req.body.username + " and a generated password: password1 - https://therefactory.herokuapp.com/login ",
                           bcc: process.env.MY_EMAIL,
                       };
                       smtpTrans.sendMail(mailOpts, function (error, response) {

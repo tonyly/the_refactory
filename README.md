@@ -3,13 +3,12 @@
 todo
 
 10/16-10/20
-- logout drop down
+-
 - emails work? (new project & new client)
 
 - dont delete clients when i delete a project
 - edit password issue
 - jenky screen issue, what is it?
-- seed & restart
 
 Misc.
   - heroku test (with seeds & restart)
@@ -28,3 +27,8 @@ more
   - clean up dupes & dead
   - test
   - ssv
+
+
+add project
+add client
+register
