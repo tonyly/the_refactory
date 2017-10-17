@@ -2,12 +2,17 @@
 
 todo
 
-10/2-10/6
+10/16-10/20
+- logout drop down
+- emails work? (new project & new client)
+
+- dont delete clients when i delete a project
+- edit password issue
+- jenky screen issue, what is it?
+- seed & restart
 
 Misc.
-  - jenky screen issue, what is it?
-  - heroku test
-  - email issue for projects & clients
+  - heroku test (with seeds & restart)
   - content update
 
 *************************************

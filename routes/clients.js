@@ -71,13 +71,16 @@ router.get("/:id/edit", authorizedUser, function(req, res, next) {
   let clientID = req.params.id;
   let user = req.session.user.id;
   knex("clients").where("id", clientID).first().then(function (client){
+    knex.from("projects").innerJoin("clients", "projects.id", "clients.project_id").where("clients.id", clientID).first().then(function (clients_project){
     knex("projects").then(function (projects){
     res.render("clients/edit", {
         client: client,
         user: user,
         projects: projects,
+        clients_project: clients_project,
   });
-  console.log(client);
+  console.log(clients_project);
+});
 });
 });
 });
