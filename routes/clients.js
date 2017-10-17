@@ -80,7 +80,7 @@ router.get("/:id/edit", authorizedUser, function(req, res, next) {
         projects: projects,
         clients_project: clients_project,
   });
-  console.log(clients_project);
+  console.log(clients_project.name);
 });
 });
 });
@@ -141,6 +141,7 @@ router.put("/:id", authorizedUser, function (req, res, next) {
     knex("clients").where("id", clientID).update({
       first_name: req.body.first_name,
       last_name: req.body.last_name,
+      username: req.body.username,
       email: req.body.email,
       avatar: req.body.avatar,
       project_id: req.body.project,

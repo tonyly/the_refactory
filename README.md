@@ -3,11 +3,9 @@
 todo
 
 10/16-10/20
-- deleting users on admin deletes everything (children deletion)
-  - don't delete clients when i delete a project
-- jenky screen issue, what is it?
-
 - client page
+
+- jenky screen issue, what is it?
 - message feature
 
 Misc.
@@ -27,7 +25,6 @@ more
   - clean up dupes & dead
   - test
   - ssv
-
 
 
 
