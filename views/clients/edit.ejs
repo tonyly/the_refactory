@@ -38,7 +38,7 @@
                                 <input type="password" id="" class="form-control" name="password" required>
                             </div>
 
-                            <% if (clients_project === null){%>
+                            <% if (clients_project === undefined){%>
                               <div class="btn-group col-lg-4">
                                 <br>
                                 <select name="project" required>
@@ -54,7 +54,7 @@
                               <div class="btn-group col-lg-4">
                                 <br>
                                 <select name="project" required>
-                                  <option value="<%clients_project.name%>" disabled selected><%=clients_project.name%></option>
+                                  <option disabled selected><%=clients_project.name%></option>
                                   <% projects.forEach(function (project) { %>
                                   <option value="<%=project.id%>"><%=project.name%></option>
                                   <% }) %>

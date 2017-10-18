@@ -80,7 +80,7 @@ router.get("/:id/edit", authorizedUser, function(req, res, next) {
         projects: projects,
         clients_project: clients_project,
   });
-  console.log(clients_project.name);
+  console.log(clients_project);
 });
 });
 });

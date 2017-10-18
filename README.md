@@ -5,7 +5,7 @@ todo
 10/16-10/20
 - client page
 
-- jenky screen issue, what is it?
+- jenky screen issue
 - message feature
 
 Misc.
