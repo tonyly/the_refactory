@@ -143,7 +143,7 @@
                     </a>
                     <ul class="dropdown-menu animated flipInX m-t-xs">
                       <li><a href="/client/<%=client.id%>/edit">Edit Profile</a></li>
-                      <li><a href="/projects">Mange Project</a></li>
+                      <li><a href="/client/<%=client.project_id%>/project">Mange Project</a></li>
                       <li class="divider"></li>
                       <li><a class="logout">Logout</a></li>
                     </ul>
@@ -165,7 +165,7 @@
                 <a href="/client"> <span class="nav-label">Dashboard</span> </a>
             </li>
             <li>
-                <a href="/projects/<%=client.project_id%>"> <span class="nav-label">Project</span> </a>
+                <a href="/client/<%=client.project_id%>/project"> <span class="nav-label">Project</span> </a>
             </li>
         </ul>
     </div>

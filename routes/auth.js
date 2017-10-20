@@ -25,13 +25,13 @@ router.get("/user_login", function (req, res, next) {
 router.post("/client_login", function (req, res, next) {
   knex("clients").where({
       username: req.body.username
-  }).first().then(function (client) {
-      if(!client){
+  }).first().then(function (user) {
+      if(!user){
           res.send("No client exists");
       } else {
-          bcrypt.compare(req.body.password, client.hashed_password, function(err, result) {
+          bcrypt.compare(req.body.password, user.hashed_password, function(err, result) {
               if(result){
-                  req.session.client = client;
+                  req.session.user = user;
                   res.clearCookie("registered");
                   res.cookie("loggedin", true);
                   res.redirect("/client");

@@ -11,7 +11,7 @@ const bcrypt = require("bcrypt");
 
 
 function authorizedUser(req, res, next) {
-    let userID = req.session.client.id;
+    let userID = req.session.user.id;
     if(userID){
         next();
     } else {
@@ -20,16 +20,17 @@ function authorizedUser(req, res, next) {
 }
 
 router.get("/", function (req, res, next) {
-  let clientID = req.session.client.id;
+  let clientID = req.session.user.id;
   knex("clients").where("id", clientID).first().then(function (client){
     res.render("client/home", {
       client: client,
     });
+    console.log(client)
 });
 });
 
 router.get("/:id", authorizedUser, function(req, res, next) {
-  let userID = req.session.client.id;
+  let userID = req.session.user.id;
   let clientID = req.params.id;
   knex("clients").where("id", clientID).first().then(function (client){
     knex("users").where("id", userID).first().then(function (user){
@@ -42,8 +43,19 @@ router.get("/:id", authorizedUser, function(req, res, next) {
 });
 });
 
+router.get("/:id/project", authorizedUser, function(req, res, next) {
+  let userID = req.session.user.id;
+  let clientID = req.params.id;
+  knex("clients").where("id", clientID).first().then(function (client){
+    res.render("client/project", {
+        client: client,
+  });
+  console.log(client);
+});
+});
+
 router.get("/:id/edit", authorizedUser, function(req, res, next) {
-  let userID = req.session.client.id;
+  let userID = req.session.user.id;
   let clientID = req.params.id;
   knex("clients").where("id", clientID).first().then(function (client){
     knex("users").where("id", userID).first().then(function (user){
