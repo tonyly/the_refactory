@@ -16,6 +16,7 @@ const cookieParser = require("cookie-parser");
 const auth = require("./routes/auth");
 const users = require("./routes/users");
 const clients = require("./routes/clients");
+const client = require("./routes/client");
 const projects = require("./routes/projects");
 const admin = require("./routes/admin");
 
@@ -37,6 +38,7 @@ app.use(function(req, res, next){
 app.use("/users", users);
 app.use("/auth", auth);
 app.use("/clients", clients);
+app.use("/client", client);
 app.use("/projects", projects);
 app.use("/admin", admin);
 

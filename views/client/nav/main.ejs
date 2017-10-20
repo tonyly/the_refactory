@@ -1,0 +1,172 @@
+<!-- Header -->
+<div id="header">
+    <div class="color-line">
+    </div>
+    <div id="logo" class="light-version">
+        <span>
+            The_ReFactory
+        </span>
+    </div>
+    <nav role="navigation">
+        <div class="header-link hide-menu"><i class="fa fa-bars"></i></div>
+        <div class="small-logo">
+            <span class="text-primary"> The_ReFactory</span>
+        </div>
+        <form role="search" class="navbar-form-custom" method="post" action="#">
+            <div class="form-group">
+                <input type="text" placeholder="Search" class="form-control" name="search">
+            </div>
+        </form>
+        <div class="mobile-menu">
+            <button type="button" class="navbar-toggle mobile-menu-toggle" data-toggle="collapse" data-target="#mobile-collapse">
+                <i class="fa fa-chevron-down"></i>
+            </button>
+            <div class="collapse mobile-navbar" id="mobile-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a class="" href="/auth/login">Login</a>
+                    </li>
+                    <li>
+                        <a class="logout">Logout</a>
+                    </li>
+                    <li>
+                        <a class="" href="/client/<%=client.id%>/edit">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <ul class="nav navbar-nav no-borders">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                        <i class="pe-7s-speaker"></i>
+                    </a>
+                    <ul class="dropdown-menu hdropdown notification animated flipInX">
+                        <li>
+                            You have 0 new notifications
+                        </li>
+                        <li class="summary"><a href="#">See all notifications</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                        <i class="pe-7s-keypad"></i>
+                    </a>
+
+                    <div class="dropdown-menu hdropdown bigmenu animated flipInX">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <a href="/client/<%=client.id%>">
+                                        <i class="pe pe-7s-portfolio text-info"></i>
+                                        <h5>Dashboard</h5>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/messages/<%=client.id%>">
+                                        <i class="pe pe-7s-mail text-warning"></i>
+                                        <h5>Messages</h5>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/projects/1">
+                                        <i class="pe pe-7s-users text-success"></i>
+                                        <h5>Projects</h5>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="/notifications/<%=client.id%>">
+                                        <i class="pe pe-7s-comment text-info"></i>
+                                        <h5>Notifications</h5>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/analytics/<%=client.id%>">
+                                        <i class="pe pe-7s-graph1 text-danger"></i>
+                                        <h5>Analytics</h5>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/files/<%=client.id%>">
+                                        <i class="pe pe-7s-box1 text-success"></i>
+                                        <h5>Files</h5>
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle label-menu-corner" href="#" data-toggle="dropdown">
+                        <i class="pe-7s-mail"></i>
+                        <span class="label label-success"></span>
+                    </a>
+                    <ul class="dropdown-menu hdropdown animated flipInX">
+                        <div class="title">
+                            You have 0 new messages
+                        </div>
+                        <!-- <li>
+                            <a>
+                            </a>
+                        </li> -->
+                        <li class="summary"><a href="#">See All Messages</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="logout">
+                        <i class="pe-7s-upload pe-rotate-90"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!-- Navigation -->
+<aside id="menu">
+    <div id="navigation">
+        <div class="profile-picture">
+            <a href="/client/<%=client.id%>/edit">
+                <img src="<%=client.avatar%>" height="70" width="70" class="img-circle m-b" alt="logo">
+            </a>
+
+            <div class="stats-label text-color">
+                <span class="font-extra-bold font-uppercase"><%=client.first_name%> <%=client.last_name%></span>
+
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                        <small class="text-muted"> Edit <b class="caret"></b></small>
+                    </a>
+                    <ul class="dropdown-menu animated flipInX m-t-xs">
+                      <li><a href="/client/<%=client.id%>/edit">Edit Profile</a></li>
+                      <li><a href="/projects">Mange Project</a></li>
+                      <li class="divider"></li>
+                      <li><a class="logout">Logout</a></li>
+                    </ul>
+                </div>
+
+
+                <div id="sparkline1" class="small-chart m-t-sm"></div>
+                <div>
+                    <h4 class="font-extra-bold m-b-xs">
+                        1749 / 2000
+                    </h4>
+                    <small class="text-muted">Average migration quality over time</small>
+                </div>
+            </div>
+        </div>
+
+        <ul class="nav" id="side-menu">
+            <li>
+                <a href="/client"> <span class="nav-label">Dashboard</span> </a>
+            </li>
+            <li>
+                <a href="/projects/<%=client.project_id%>"> <span class="nav-label">Project</span> </a>
+            </li>
+        </ul>
+    </div>
+</aside>
