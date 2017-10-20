@@ -17,6 +17,7 @@ Misc.
 ????s
   - saving a json object or an array in DB
   - anonymous?
+  - something/:id/anything/:id
 
 more
   - analytics - sonarcube

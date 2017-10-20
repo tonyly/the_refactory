@@ -44,13 +44,22 @@ router.get("/:id", authorizedUser, function(req, res, next) {
 });
 
 router.get("/:id/project", authorizedUser, function(req, res, next) {
-  let userID = req.session.user.id;
+  let userID = req.session.user;
   let clientID = req.params.id;
-  knex("clients").where("id", clientID).first().then(function (client){
+  knex("clients").where("id", userID.id).first().then(function (client){
+    knex("clients").where("project_id", userID.project_id).then(function (clients){
+    knex.from("projects").innerJoin("clients", "projects.id", "clients.project_id").where("clients.id", userID.id).first().then(function (project){
     res.render("client/project", {
         client: client,
+        clients: clients,
+        project: project,
   });
   console.log(client);
+  console.log("alksjdnflkasjdfkljaslkdjfajsldfjklas");
+  console.log(req.params.id);
+
+});
+});
 });
 });
 
