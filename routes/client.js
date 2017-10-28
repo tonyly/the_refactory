@@ -63,16 +63,18 @@ router.get("/:id/project", authorizedUser, function(req, res, next) {
 });
 });
 
-router.get("/:id/edit", authorizedUser, function(req, res, next) {
+router.get("/edit/:id", authorizedUser, function(req, res, next) {
   let userID = req.session.user.id;
   let clientID = req.params.id;
   knex("clients").where("id", clientID).first().then(function (client){
     knex("users").where("id", userID).first().then(function (user){
+      knex.from("projects").innerJoin("clients", "projects.id", "clients.project_id").where("clients.id", clientID).first().then(function (clients_project){
     res.render("client/edit", {
         user: user,
         client: client,
+        clients_project: clients_project,
   });
-  console.log(client);
+});
 });
 });
 });

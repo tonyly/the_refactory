@@ -29,39 +29,14 @@
                                 <label>Username</label>
                                 <input type="" value="<%=client.username%>" id="" class="form-control" name="username" required>
                             </div>
-                            <div class="form-group col-lg-4">
+                            <div class="form-group col-lg-6">
                                 <label>Avatar</label>
                                 <input type="" value="<%=client.avatar%>" id="" class="form-control" name="avatar" required>
                             </div>
-                            <div class="form-group col-lg-4">
+                            <div class="form-group col-lg-6">
                                 <label>Password</label>
                                 <input type="password" id="" class="form-control" name="password" required>
                             </div>
-
-                            <% if (clients_project === undefined){%>
-                              <div class="btn-group col-lg-4">
-                                <br>
-                                <select name="project" required>
-                                  <option disabled selected>Unassigned</option>
-                                  <% projects.forEach(function (project) { %>
-                                  <option value="<%=project.id%>"><%=project.name%></option>
-                                  <% }) %>
-                              </select>
-                              </div>
-
-                            <% }else{ %>
-
-                              <div class="btn-group col-lg-4">
-                                <br>
-                                <select name="project" required>
-                                  <option disabled selected><%=clients_project.name%></option>
-                                  <% projects.forEach(function (project) { %>
-                                  <option value="<%=project.id%>"><%=project.name%></option>
-                                  <% }) %>
-                              </select>
-                              </div>
-                              <% } %>
-
 
                             </div>
                             <div class="text-center">
