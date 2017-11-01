@@ -2,22 +2,21 @@
 
 todo
 
-10/16-10/20
-- client page
+10/30-11/3
 
-- jenky screen issue
+- content update
 - message feature
 
 Misc.
   - heroku test (with seeds & restart)
-  - content update
 
 *************************************
 
 ????s
   - saving a json object or an array in DB
   - anonymous?
-  - something/:id/anything/:id
+
+  - something/:id/anything/:id >> I figured it out, just make the path, can do user_id as well
 
 more
   - analytics - sonarcube
