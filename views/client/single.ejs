@@ -14,7 +14,7 @@
                 </div>
             </a>
 
-            <div id="hbreadcrumb" class="pull-right m-t-lg">
+            <!-- <div id="hbreadcrumb" class="pull-right m-t-lg">
                 <ol class="hbreadcrumb breadcrumb">
                   <a href="/clients/<%=client.id%>/edit"><button class="btn btn-success"  data-style="zoom-in">Edit</button> </a>
                         <% if(user.admin === true){ %>
@@ -24,7 +24,7 @@
                     <%}%>
                     </li>
                 </ol>
-            </div>
+            </div> -->
             <h2 class="font-light m-b-xs">
                 Client Profile
             </h2>
@@ -45,9 +45,9 @@
                         <i class="fa fa-linkedin btn btn-default btn-xs"></i>
                     </div>
                 </div>
-                <img src="<%=client.avatar%>" height="250" width="250" class="img-circle m-b m-t-md" alt="logo">
-                <h3><a href=""><%=client.first_name%> <%=client.last_name%> </a></h3>
-                <div class="text-muted font-bold m-b-xs"><%=client.email%></div>
+                <img src="<%=user.avatar%>" height="250" width="250" class="img-circle m-b m-t-md" alt="logo">
+                <h3><a href=""><%=user.first_name%> <%=user.last_name%> </a></h3>
+                <div class="text-muted font-bold m-b-xs"><%=user.email%></div>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan.
                 </p>

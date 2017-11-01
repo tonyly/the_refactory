@@ -32,13 +32,13 @@ router.get("/", function (req, res, next) {
 router.get("/:id", authorizedUser, function(req, res, next) {
   let userID = req.session.user.id;
   let clientID = req.params.id;
-  knex("clients").where("id", clientID).first().then(function (client){
-    knex("users").where("id", userID).first().then(function (user){
+  knex("clients").where("id", userID).first().then(function (client){
+    knex("clients").where("id", clientID).first().then(function (user){
     res.render("client/single", {
         user: user,
         client: client,
   });
-  console.log(client);
+  console.log(user);
 });
 });
 });
