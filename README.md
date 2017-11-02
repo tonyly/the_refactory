@@ -4,11 +4,11 @@ todo
 
 10/30-11/3
 
-- content update
-- message feature
+- preventdefault fixes the jenkiness...?
+- logoff works on heroku
 
-Misc.
-  - heroku test (with seeds & restart)
+- content update
+- sonarqube access & response
 
 *************************************
 

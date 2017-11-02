@@ -19,7 +19,7 @@ function authorizedUser(req, res, next) {
     }
 }
 
-router.get("/", function (req, res, next) {
+router.get("/", authorizedUser, function (req, res, next) {
   let clientID = req.session.user.id;
   knex("clients").where("id", clientID).first().then(function (client){
     res.render("client/home", {
