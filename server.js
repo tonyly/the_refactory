@@ -19,6 +19,7 @@ const clients = require("./routes/clients");
 const client = require("./routes/client");
 const projects = require("./routes/projects");
 const admin = require("./routes/admin");
+const admin = require("./routes/messages");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -41,6 +42,7 @@ app.use("/clients", clients);
 app.use("/client", client);
 app.use("/projects", projects);
 app.use("/admin", admin);
+app.use("/messages", messages);
 
 app.listen(port, function () {
     console.log("hello from", port);

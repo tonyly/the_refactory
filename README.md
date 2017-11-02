@@ -37,3 +37,7 @@ more
   ALTER SEQUENCE users_id_seq RESTART WITH 1000;
   ALTER SEQUENCE projects_id_seq RESTART WITH 1000;
   ALTER SEQUENCE clients_id_seq RESTART WITH 1000;
+
+  heroku run knex migrate:latest
+  heroku run knex seed:run
+  heroku pg:psql --app therefactory
