@@ -5,9 +5,8 @@ todo
 10/30-11/3
 
 - preventdefault fixes the jenkiness...?
-- logoff works on heroku
-
 - content update
+
 - sonarqube access & response
 
 *************************************
