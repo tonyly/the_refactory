@@ -1,60 +1,68 @@
 <% include partials/header %>
 
-<% include nav/main %>
+  <% include nav/main %>
 
-<!-- Main Wrapper -->
-<div id="wrapper">
-<div class="normalheader ">
-    <div class="hpanel">
-        <div class="panel-body">
+    <!-- Main Wrapper -->
+    <div id="wrapper">
+      <div class="normalheader ">
+        <div class="hpanel">
+          <div class="panel-body">
             <a class="small-header-action" href="">
-                <div class="clip-header">
-                    <i class="fa fa-arrow-up"></i>
-                </div>
+              <div class="clip-header">
+                <i class="fa fa-arrow-up"></i>
+              </div>
             </a>
             <div id="hbreadcrumb" class="pull-right m-t-lg">
-                <ol class="hbreadcrumb breadcrumb">
-                  <a href="/clients/new"><button class="btn btn-primary2"  data-style="zoom-in">New</button> </a>
-                </ol>
+              <ol class="hbreadcrumb breadcrumb">
+                <a href="/clients/new"><button class="btn btn-primary2"  data-style="zoom-in">New</button> </a>
+              </ol>
             </div>
             <h2 class="font-light m-b-xs">
                 Clients
             </h2>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
-<div class="content animate-panel">
-  <div class="row">
-  <% clients.forEach(function (client) { %>
-    <div class="projects">
-    <div class="col-lg-3">
-      <a href="/clients/<%=client.id%>">
-        <div class="hpanel hgreen contact-panel">
-            <div class="panel-body">
-                <span class="label label-success pull-right"><%=client.id%></span>
-                <img alt="logo" class="img-circle m-b" src="<%=client.avatar%>">
-                <h3><%=client.first_name%> <%=client.last_name%></h3>
-                <div class="text-muted font-bold m-b-xs"><%=client.email%></div>
-                <p>
-                      <%=client.created_at%>
-                      <%=client.updated_at%>
-                </p>
-            </div>
-            <div class="panel-footer contact-footer">
-                <div class="row">
-                    <div class="col-md-4 border-right"> <div class="contact-stat"><span>User_id: </span> <strong><%=client.user_id%> </strong></div> </div>
-                    <div class="col-md-4 border-right"> <div class="contact-stat"><span>Project_id: </span> <strong><%=client.project_id%> </strong></div> </div>
-                    <div class="col-md-4"> <div class="contact-stat"><span>is cool: </span> <strong>True</strong></div> </div>
-                </div>
+      <div class="content animate-panel">
+        <div class="row">
+          <% clients.forEach(function (client) { %>
+            <div class="projects">
+              <div class="col-lg-3">
+                <a href="/clients/<%=client.id%>">
+                  <div class="hpanel hgreen contact-panel">
+                    <div class="panel-body">
+                      <span class="label label-success pull-right"><%=client.id%></span>
+                      <img alt="logo" class="img-circle m-b" src="<%=client.avatar%>">
+                      <h3><%=client.first_name%> <%=client.last_name%></h3>
+                      <div class="text-muted font-bold m-b-xs">
+                        <%=client.email%>
+                      </div>
+                      <p>
+                        <%=client.created_at%>
+                          <%=client.updated_at%>
+                      </p>
+                    </div>
+                    <div class="panel-footer contact-footer">
+                      <div class="row">
+                        <div class="col-md-4 border-right">
+                          <div class="contact-stat"><span>User_id: </span> <strong><%=client.user_id%> </strong></div>
+                        </div>
+                        <div class="col-md-4 border-right">
+                          <div class="contact-stat"><span>Project_id: </span> <strong><%=client.project_id%> </strong></div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="contact-stat"><span>is cool: </span> <strong>True</strong></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <% }) %>
             </div>
         </div>
-      </a>
+      </div>
     </div>
-<% }) %>
-</div>
-</div>
-</div>
-</div>
 
-<% include partials/footer %>
+    <% include partials/footer %>
