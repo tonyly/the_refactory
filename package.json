@@ -10,7 +10,7 @@
   "scripts": {
     "test": "NODE_ENV=test mocha --reporter dot",
     "start": "node server.js",
-    "heroku-postbuild": "knex migrate:latest",
+    "heroku-postbuild": "knex migrate:latest && knex seed:run",
     "nibble": "eslint-nibble db/ migrations/ routes/ seeds/ views/ server.js"
   },
   "engines": {

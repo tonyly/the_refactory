@@ -4,11 +4,10 @@ todo
 
 November -
 
+- gulp
+
 - order on page load for the jenkiness...?
 - test
-
-- gulp
-- eslint-nibble
 
 - sonarqube access & response >> florian
 
@@ -21,6 +20,7 @@ November -
   - something/:id/anything/:id >> I figured it out, just make the path, can do user_id as well
 
 
+  npm run nibble
 
   Dropdb the_refactory-dev
   Createdb	the_refactory-dev
