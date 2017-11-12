@@ -4,10 +4,16 @@ todo
 
 10/30-11/3
 
-- preventdefault fixes the jenkiness...?
-- content update
+- linter
+- beautify
+- clean up dupes & dead
 
-- sonarqube access & response
+- google analytics
+- test
+
+- sonarqube access & response >> florian
+
+- order on page load for the jenkiness...?
 
 *************************************
 
@@ -19,10 +25,7 @@ todo
 
 more
   - analytics - sonarcube
-  - google analytics
-  - linter
-  - clean up dupes & dead
-  - test
+
   - ssv
 
 
