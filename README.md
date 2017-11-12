@@ -2,16 +2,15 @@
 
 todo
 
-10/30-11/3
-
-- linter & beautify & clean up dupes & dead
-
-- google analytics
-- test
-
-- sonarqube access & response >> florian
+November -
 
 - order on page load for the jenkiness...?
+- test
+
+- gulp
+- eslint-nibble
+
+- sonarqube access & response >> florian
 
 *************************************
 

@@ -82,7 +82,7 @@ router.get("/:id/edit", authorizedUser, function(req, res, next) {
 
 router.post("/new", function(req, res, next) {
   let userID = req.session.user;
-  let smtpTrans, mailOpts
+  let smtpTrans, mailOpts;
   knex("clients").where({
     email: req.body.email
   }).first().then(function(client) {
@@ -118,10 +118,10 @@ router.post("/new", function(req, res, next) {
             if (error) {
               res.send("email not sent");
             } else {
-              res.redirect("/clients")
+              res.redirect("/clients");
             }
           });
-        })
+        });
       });
     } else {
       res.send("Something went wrong");
