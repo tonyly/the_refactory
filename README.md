@@ -4,9 +4,7 @@ todo
 
 10/30-11/3
 
-- linter
-- beautify
-- clean up dupes & dead
+- linter & beautify & clean up dupes & dead
 
 - google analytics
 - test
@@ -22,11 +20,6 @@ todo
   - anonymous?
 
   - something/:id/anything/:id >> I figured it out, just make the path, can do user_id as well
-
-more
-  - analytics - sonarcube
-
-  - ssv
 
 
 
