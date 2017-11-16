@@ -5,6 +5,22 @@ const app = require('../server');
 const request = require('supertest')(app);
 const knex = require('../db/knex');
 
+let admin = {
+  username: 'cpbuckingham',
+  hashed_password: 'seed'
+};
+
+let user = {
+  username: 'togo',
+  hashed_password: 'seed'
+};
+
+let client = {
+  username: 'jreed',
+  hashed_password: 'password1'
+};
+
+
 //tests to tests
 describe('Test the test', function() {
   it('should pass the test', function() {
@@ -12,7 +28,7 @@ describe('Test the test', function() {
   })
 })
 
-//tests for landing page
+//test for landing page
 describe('Landing Page', function() {
   it('should display the landing page', function(done) {
     request.get('/')
@@ -21,82 +37,49 @@ describe('Landing Page', function() {
         if (err) {
           done(err);
         }
-        expect(res.text).to.contain("Featured Blog Post")
+        expect(res.text).to.contain("Welcome The_ReFactory")
         done();
       })
   })
 })
 
-//tests for featured pages
-describe('Featured Pages', function() {
-  it('should display feature 1', function(done) {
-    request.get('/featured/one')
-      .expect(200)
-      .end(function(err, res) {
-        if (err) {
-          done(err)
-        }
-        expect(res.text).to.contain("Workout Goals for 2017")
-        done();
-      })
+//test for auth page
+describe('Logging on', function() {
+
+  it('should display a single admin profile information', function(done) {
+    request.post('/auth/user_login')
+      .send(admin)
+      .expect(200, done);
   })
 
-  it('should display feature 2', function(done) {
-    request.get('/featured/two')
-      .expect(200)
-      .end(function(err, res) {
-        if (err) {
-          done(err)
-        }
-        expect(res.text).to.contain("Picking Music for a Triathlon")
-        done();
-      })
+  it('should display a single clients profile information', function(done) {
+    request.post('/auth/client_login')
+      .send(client)
+      .expect(200, done);
   })
 
-  it('should display feature 3', function(done) {
-    request.get('/featured/three')
-      .expect(200)
-      .end(function(err, res) {
-        if (err) {
-          done(err)
-        }
-        expect(res.text).to.contain("Shedding for your Wedding")
-        done();
-      })
-  })
-})
-
-//tests for auth page
-describe('Auth Page', function() {
   it('should display a single users profile information', function(done) {
-    request.get('/auth')
-      .expect(200)
-      .end(function(err, res) {
-        if (err) {
-          done(err)
-        }
-        knex('users').where('id', 1).first().then(function(data) {
-          expect(res.text).to.contain(data.username)
-          done();
-        })
-      })
-  })
-
-  it('should display a single users posts', function(done) {
-    request.get('/auth')
-      .expect(200)
-      .end(function(err, res) {
-        if (err) {
-          done(err)
-        }
-        knex('posts').where('user_id', 1).first().then(function(data) {
-          expect(res.text).to.contain(data.body)
-          done();
-        })
-      })
+    request.post('/auth/user_login')
+      .send(user)
+      .expect(200, done);
   })
 })
 
+xdescribe('Logging on', function() {
+
+  it('client page', function(done) {
+    request.get('/client')
+      .expect(200, done);
+  })
+  it('client page', function(done) {
+    request.get('/users/3')
+      .expect(200, done);
+  })
+  it('client page', function(done) {
+    request.get('/admin')
+      .expect(200, done);
+  })
+})
 
 
 // TO BE CONTINUED

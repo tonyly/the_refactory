@@ -4,9 +4,6 @@ todo
 
 November -
 
-- test
-- order on page load for the jenkiness...?
-
 - sonarqube access & response >> florian
 
 *************************************
