@@ -20,11 +20,6 @@
 <script src="../../javascripts/charts.js"></script>
 
 <script>
-  $(window).load(function() {
-    $("body").removeClass("preload");
-  });
-
-
   $('.logout').click(function() {
     swal({
         title: "Logging you off",
@@ -54,6 +49,9 @@
         }
       });
   });
+  $(window).load(function() {
+    $('#cover').fadeOut(1000);
+  })
 </script>
 
 </body>
