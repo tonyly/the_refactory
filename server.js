@@ -18,6 +18,7 @@ const clients = require("./routes/clients");
 const client = require("./routes/client");
 const projects = require("./routes/projects");
 const admin = require("./routes/admin");
+const search = require("./routes/search");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -37,6 +38,7 @@ app.use("/clients", clients);
 app.use("/client", client);
 app.use("/projects", projects);
 app.use("/admin", admin);
+app.use("/search", search);
 
 app.listen(port, function() {
   console.log("Welcome to the_refactory at port", port);
