@@ -162,6 +162,9 @@
     </div>
 
     <ul class="nav" id="side-menu">
+      <li>
+        <a href="/users/<%=user.id%>"> <span class="nav-label">Dashboard</span> </a>
+      </li>
       <% if (user.admin === true){ %>
         <li>
           <a href="/admin%>"> <span class="nav-label">Admin</span> </a>
@@ -170,9 +173,6 @@
           <a href="/search%>"> <span class="nav-label">Search</span> </a>
         </li>
         <%}%>
-          <li>
-            <a href="/users/<%=user.id%>"> <span class="nav-label">Dashboard</span> </a>
-          </li>
           <li class="active">
             <a href="/projects"> <span class="nav-label">Projects</span> </a>
           </li>
