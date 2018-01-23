@@ -115,11 +115,11 @@ router.post("/new", function(req, res, next) {
             bcc: process.env.MY_EMAIL,
           };
           smtpTrans.sendMail(mailOpts, function(error, response) {
-            if (error) {
-              res.send("email not sent");
-            } else {
+            // if (error) {
+            //   res.send("email not sent");
+            // } else {
               res.redirect("/clients");
-            }
+            // }
           });
         });
       });
