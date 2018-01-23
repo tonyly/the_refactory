@@ -1,20 +1,5 @@
 # the_refactory
 
-todo
-
-November -
-
-- sonarqube access & response >> florian
-
-*************************************
-
-????s
-  - saving a json object or an array in DB
-  - anonymous?
-
-  - something/:id/anything/:id >> I figured it out, just make the path, can do user_id as well
-
-
   npm run nibble
   npm test
 
