@@ -1,6 +1,6 @@
 "use strict";
 /*eslint no-undef: 0*/
-
+/* ITS YA BOI */
 module.exports = {
 
   development: {
